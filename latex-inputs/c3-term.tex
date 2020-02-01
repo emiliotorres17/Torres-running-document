@@ -1,0 +1,98 @@
+\subsection{$c_{3}$ Term}
+Continuing the process with the $c_{3}$ term we start by expanding and
+simplifying, namely,
+\begin{equation}
+    \begin{split}
+        \mathbf{S}:\mathbf{R}^2 =  S_{ij}(R_{ik}R_{kj}) = &  
+                S_{1}(\cancel{R_{11} R_{11}} + R_{12} R_{21} + R_{13} R_{31}) +     \\
+            &   S_{2}(R_{21} R_{12} + \cancel{R_{22} R_{22}} + R_{23} R_{32}) +     \\
+            &   S_{3}(R_{31} R_{13} + R_{32} R_{23} + \cancel{R_{33} R_{33}})
+    \end{split}
+\end{equation}
+Substituting in $R_{21} = -R_{12}$, $R_{32} = -R_{23}$, and $R_{13} = -
+R_{31}$ then gives
+\begin{equation}
+    S_{ij}(R_{ik}R_{kj}) = 
+        S_{1} (-R_{12}^2 - R_{31}^2)  +
+        S_{2} (-R_{12}^2 - R_{23}^2)  +
+        S_{3} (-R_{31}^2 - R_{23}^2)
+\end{equation}
+This can be arranged as
+\begin{equation}
+    S_{ij}(R_{ik}R_{kj}) = 
+        R_{12}^{2} (\underbrace{-S_{1} - S_{2}}_{= S_{3}}) + 
+        R_{23}^{2} (\underbrace{-S_{2} - S_{3}}_{= S_{1}}) + 
+        R_{31}^{2} (\underbrace{-S_{1} - S_{3}}_{= S_{2}})  
+\end{equation}
+Thus
+%\begin{subequations}
+%    \begin{equation}
+%        = R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 S_{2}
+%    \end{equation}
+%    \begin{equation}
+%         = R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 (-S_{1} - S_{3}) 
+%    \end{equation}
+%    \begin{equation}
+%         = R_{12}^2 S_{3} + R_{23}^2 S_{1} - R_{31}^2 S_{1} - R_{31}^2 S_{3}  
+%    \end{equation}
+%    \begin{equation}
+%         = \underbrace{S_{1} R_{23}^2 - S_{3} R_{31}^{2}}_{\geq 0}
+%            \underbrace{-S_{1} R_{31}^2 + S_{3} R_{12}^2}_{\leq 0}
+%    \end{equation}
+%\end{subequations}
+\begin{subequations}
+\begin{eqnarray}
+    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 S_{2}                  \\
+    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 (-S_{1} - S_{3})       \\
+    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} - R_{31}^2 S_{1} - R_{31}^2 S_{3} \\ 
+    & = & \underbrace{S_{1} R_{23}^2 - S_{3} R_{31}^{2}}_{\geq 0}          
+            \underbrace{-S_{1} R_{31}^2 + S_{3} R_{12}^2}_{\leq 0}
+\end{eqnarray}
+\end{subequations}
+
+Therefore $\mathbf{S}:\mathbf{R}^2 \leq 0$ when the following is true
+\begin{subequations}
+    %\begin{equation}
+    %    S_{1} R_{23}^2 - S_{3} R_{31}^2 -S_{1} R_{31}^2 + S_{3} R_{12}^2 \leq 0
+    %\end{equation}
+    \begin{equation}
+        S_{1} R_{23}^2 - S_{3} R_{31}^2 \leq S_{1} R_{31}^2 - S_{3} R_{12}^2
+    \end{equation}
+    %\begin{equation}
+    %    S_{1} R_{23}^2 - S_{1} R_{31}^2 \leq S_{3} R_{31}^2 - S_{3} R_{12}^2
+    %\end{equation}
+    \begin{equation}
+        S_{1} (R_{23}^2 - R_{31}) \leq S_{3} ( R_{31}^2 - R_{12}^2)
+    \end{equation}
+    \label{eq:c3-inequal}
+\end{subequations}     \\
+
+Recall from the hand written course pack (pg.48) that the rotation rates
+can be written in terms of the vorticity as,
+\begin{equation}
+    \mathbf{\omega} \equiv 2 (R_{23}, R_{31}, R_{12}) = (\omega_{1}, \omega_{2}, \omega_{3} )
+\end{equation}
+therefore,
+\begin{subequations}
+    \begin{equation}
+        R_{23} = \frac{1}{2} \omega_{1}
+    \end{equation}
+    \begin{equation}
+        R_{31} = \frac{1}{2} \omega_{2}
+    \end{equation}
+    \begin{equation}
+        R_{12} = \frac{1}{2} \omega_{3}
+    \end{equation}
+    \label{eq:vorticity}
+\end{subequations}
+
+Substituting Eq.~\ref{eq:vorticity} into Eq.~\ref{eq:c3-inequal} gives
+\begin{equation}
+    S_{1} ( \omega_{1}^2 - \omega_{2}^2 ) \leq S_{3} (\omega_{2}^2 - \omega_{3}^2)
+\end{equation}
+Thus $\mathbf{S}:\mathbf{R}^2 \leq 0$ when
+\begin{equation}
+    \colorboxed{red}{
+        \frac{ S_{3} ( \omega_{2}^2 - \omega_{3}^2 )}{S_{1} (\omega_{1}^2 - \omega_{2}^2 )} \geq 1
+    }
+\end{equation}

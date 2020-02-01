@@ -1,0 +1,158 @@
+\newpage
+\subsection{$c_7$ Term}
+Again splitting the $c_{7}$ term into two terms and evaluating each terms
+separately we get the following,
+\begin{equation}
+    \svec : (\rvec \svec \rvec^2 - \rvec^2 \svec \rvec) =
+                \underbrace{ S_{ij} (R_{ik} S_{kl} R_{lm} R_{mj})}_{\equiv \text{term 1}} - 
+                \underbrace{ S_{ij} (R_{ik} R_{kl} S_{lm} R_{mj})}_{\equiv \text{term 2}}
+\end{equation}
+\subsubsection{Term 1}
+Expanding the first term gives,
+\begin{equation}
+    \begin{split}
+        S_{ij}(R_{ik}S_{kl} R_{lm} R_{mj}) = &
+            S_{1}(
+            \cancel{R_{11}}S_{1}\cancel{R_{11}}\cancel{R_{11}} + \cancel{R_{11}}S_{1}R_{12}R_{21} + \cancel{R_{11}}S_{1}R_{13}R_{31}  +   \\
+        &   \cancel{R_{11}}\cancel{S_{12}}R_{21}\cancel{R_{11}} + \cancel{R_{11}}\cancel{S_{12}}\cancel{R_{22}}R_{21} + \cancel{R_{11}}\cancel{S_{12}}R_{23}R_{31}  +   \\
+        &   \cancel{R_{11}}S_{13}R_{31}\cancel{R_{11}} + \cancel{R_{11}}S_{13}R_{32}R_{21} + \cancel{R_{11}}S_{13}\cancel{R_{33}}R_{31}  +   \\
+        &   R_{12}\cancel{S_{21}}\cancel{R_{11}}\cancel{R_{11}} + R_{12}\cancel{S_{21}}R_{12}R_{21} + R_{12}\cancel{S_{21}}R_{13}R_{31}  +   \\
+        &   R_{12}S_{2}R_{21}\cancel{R_{11}} + R_{12}S_{2}\cancel{R_{22}}R_{21} + {\color{red}R_{12}S_{2}R_{23}R_{31}}  +   \\
+        &   R_{12}\cancel{S_{23}}R_{31}\cancel{R_{11}} + R_{12}\cancel{S_{23}}R_{32}R_{21} + R_{12}\cancel{S_{23}}\cancel{R_{33}}R_{31}  +   \\
+        &   R_{13}S_{31}\cancel{R_{11}}\cancel{R_{11}} + R_{13}S_{31}R_{12}R_{21} + R_{13}S_{31}R_{13}R_{31}  +   \\
+        &   R_{13}\cancel{S_{32}}R_{21}\cancel{R_{11}} + R_{13}\cancel{S_{32}}\cancel{R_{22}}R_{21} + R_{13}\cancel{S_{32}}R_{23}R_{31}  +   \\
+        &   R_{13}S_{3}R_{31}\cancel{R_{11}} + {\color{red}R_{13}S_{3}R_{32}R_{21}} + R_{13}S_{3}\cancel{R_{33}}R_{31} 
+        )+ \\[6pt] 
+        &   S_{2}(
+            R_{21}S_{1}\cancel{R_{11}}R_{12} + R_{21}S_{1}R_{12}\cancel{R_{22}} + {\color{red}R_{21}S_{1}R_{13}R_{32}} +    \\
+        &   R_{21}\cancel{S_{12}}R_{21}R_{12} + R_{21}\cancel{S_{12}}\cancel{R_{22}}\cancel{R_{22}} + R_{21}\cancel{S_{12}}R_{23}R_{32} +    \\
+        &   R_{21}S_{13}R_{31}R_{12} + R_{21}S_{13}R_{32}\cancel{R_{22}} + R_{21}S_{13}\cancel{R_{33}}R_{32} +    \\
+        &   \cancel{R_{22}}\cancel{S_{21}}\cancel{R_{11}}R_{12} + \cancel{R_{22}}\cancel{S_{21}}R_{12}\cancel{R_{22}} + \cancel{R_{22}}\cancel{S_{21}}R_{13}R_{32} +    \\
+        &   \cancel{R_{22}}S_{2}R_{21}R_{12} + \cancel{R_{22}}S_{2}\cancel{R_{22}}\cancel{R_{22}} + \cancel{R_{22}}S_{2}R_{23}R_{32} +    \\
+        &   \cancel{R_{22}}\cancel{S_{23}}R_{31}R_{12} + \cancel{R_{22}}\cancel{S_{23}}R_{32}\cancel{R_{22}} + \cancel{R_{22}}\cancel{S_{23}}\cancel{R_{33}}R_{32} +    \\
+        &   R_{23}S_{31}\cancel{R_{11}}R_{12} + R_{23}S_{31}R_{12}\cancel{R_{22}} + R_{23}S_{31}R_{13}R_{32} +    \\
+        &   R_{23}\cancel{S_{32}}R_{21}R_{12} + R_{23}\cancel{S_{32}}\cancel{R_{22}}\cancel{R_{22}} + R_{23}\cancel{S_{32}}R_{23}R_{32} +    \\
+        &   {\color{red}R_{23}S_{3}R_{31}R_{12}} + R_{23}S_{3}R_{32}\cancel{R_{22}} + R_{23}S_{3}\cancel{R_{33}}R_{32} 
+        ) + \\[6pt]
+        &   S_{3}(
+            R_{31}S_{1}\cancel{R_{11}}R_{13} + {\color{red}R_{31}S_{1}R_{12}R_{23}} + R_{31}S_{1}R_{13}\cancel{R_{33}} +    \\
+        &   R_{31}\cancel{S_{12}}R_{21}R_{13} + R_{31}\cancel{S_{12}}\cancel{R_{22}}R_{23} + R_{31}\cancel{S_{12}}R_{23}\cancel{R_{33}} +    \\
+        &   R_{31}S_{13}R_{31}R_{13} + R_{31}S_{13}R_{32}R_{23} + R_{31}S_{13}\cancel{R_{33}}\cancel{R_{33}} +    \\
+        &   R_{32}\cancel{S_{21}}\cancel{R_{11}}R_{13} + R_{32}\cancel{S_{21}}R_{12}R_{23} + R_{32}\cancel{S_{21}}R_{13}\cancel{R_{33}} +    \\
+        &   {\color{red}R_{32}S_{2}R_{21}R_{13}} + R_{32}S_{2}\cancel{R_{22}}R_{23} + R_{32}S_{2}R_{23}\cancel{R_{33}} +    \\
+        &   R_{32}\cancel{S_{23}}R_{31}R_{13} + R_{32}\cancel{S_{23}}R_{32}R_{23} + R_{32}\cancel{S_{23}}\cancel{R_{33}}\cancel{R_{33}} +    \\
+        &   \cancel{R_{33}}S_{31}\cancel{R_{11}}R_{13} + \cancel{R_{33}}S_{31}R_{12}R_{23} + \cancel{R_{33}}S_{31}R_{13}\cancel{R_{33}} +    \\
+        &   \cancel{R_{33}}\cancel{S_{32}}R_{21}R_{13} + \cancel{R_{33}}\cancel{S_{32}}\cancel{R_{22}}R_{23} + \cancel{R_{33}}\cancel{S_{32}}R_{23}\cancel{R_{33}} +    \\
+        &   \cancel{R_{33}}S_{3}R_{31}R_{13} + \cancel{R_{33}}S_{3}R_{32}R_{23} + \cancel{R_{33}}S_{3}\cancel{R_{33}}\cancel{R_{33}})
+    \end{split}
+\end{equation}
+\newpage
+Thus
+\begin{subequations}
+    \begin{align}
+        = &
+                S_{1} ( R_{12}S_{2}R_{23}R_{31}       + R_{13} S_{3} R_{32} R_{21}) +           \notag  \\
+            &   S_{2} ( R_{21} S_{1} R_{13} R_{32}    + R_{23} S_{3} R_{31} R_{12}) +                   \\
+            &   S_{3} ( R_{31} S_{1} R_{12} R_{23}    + R_{32} S_{2} R_{21} R_{13})             \notag  \\
+            \notag \\
+            = &  
+                S_{1} ( R_{12}S_{2}R_{23}R_{31}       - R_{31} S_{3} R_{23} R_{12}) +           \notag  \\
+            &   S_{2} ( -R_{12} S_{1} R_{31} R_{23}   + R_{23} S_{3} R_{31} R_{12}) +                   \\
+            &   S_{3} ( R_{31} S_{1} R_{12} R_{23}    - R_{23} S_{2} R_{12} R_{31})             \notag
+    \end{align}
+\end{subequations}
+
+Factoring and grouping like terms clearly shows the first term is zero, namely,
+\begin{equation}
+    \begin{split}
+        S_{ij}(R_{ik}S_{kl} R_{lm} R_{mj}) = &
+            \underbrace{S_{1}S_{2}(R_{12}R_{23}R_{31} - R_{12}R_{23}R_{31})}_{=0} +   \\
+        &   \underbrace{S_{1}S_{3}(R_{31}R_{12}R_{23} - R_{31}R_{12}R_{23})}_{=0} +   \\
+        &   \underbrace{S_{2}S_{3}(R_{23}R_{31}R_{12} - R_{23}R_{31}R_{12})}_{=0}
+    \end{split}
+\end{equation}
+Thus
+\begin{equation}
+    S_{ij}(R_{ik}S_{kl} R_{lm} R_{mj}) = 0
+\end{equation}
+%-------------------------------------------------------------------------%
+% Term2                                                                   %
+%-------------------------------------------------------------------------%
+\subsubsection{Term 2}
+\begin{equation}
+    \begin{split}
+        -S_{ij}(R_{ik}R_{kl} S_{lm} R_{mj}) = &
+            -S_{1}(
+                \cancel{R_{11}}\cancel{R_{11}}S_{1}\cancel{R_{11}} + \cancel{R_{11}}\cancel{R_{11}}\cancel{S_{12}}R_{21} + \cancel{R_{11}}\cancel{R_{11}}\cancel{S_{13}}R_{31} +    \\
+            &   \cancel{R_{11}}R_{12}\cancel{S_{21}}\cancel{R_{11}} + \cancel{R_{11}}R_{12}S_{2}R_{21} + \cancel{R_{11}}R_{12}\cancel{S_{23}}R_{31} +    \\
+            &   \cancel{R_{11}}R_{13}\cancel{S_{31}}\cancel{R_{11}} + \cancel{R_{11}}R_{13}\cancel{S_{32}}R_{21} + \cancel{R_{11}}R_{13}S_{3}R_{31} +    \\
+            &   R_{12}R_{21}S_{1}\cancel{R_{11}} + R_{12}R_{21}\cancel{S_{12}}R_{21} + R_{12}R_{21}\cancel{S_{13}}R_{31} +    \\
+            &   R_{12}\cancel{R_{22}}\cancel{S_{21}}\cancel{R_{11}} + R_{12}\cancel{R_{22}}S_{2}R_{21} + R_{12}\cancel{R_{22}}\cancel{S_{23}}R_{31} +    \\
+            &   R_{12}R_{23}\cancel{S_{31}}\cancel{R_{11}} + R_{12}R_{23}\cancel{S_{32}}R_{21} + {\color{red}R_{12}R_{23}S_{3}R_{31}} +    \\
+            &   R_{13}R_{31}S_{1}\cancel{R_{11}} + R_{13}R_{31}\cancel{S_{12}}R_{21} + R_{13}R_{31}\cancel{S_{13}}R_{31} +    \\
+            &   R_{13}R_{32}\cancel{S_{21}}\cancel{R_{11}} + {\color{red}R_{13}R_{32}S_{2}R_{21}} + R_{13}R_{32}\cancel{S_{23}}R_{31} +    \\
+            &   R_{13}\cancel{R_{33}}\cancel{S_{31}}\cancel{R_{11}} + R_{13}\cancel{R_{33}}\cancel{S_{32}}R_{21} + R_{13}\cancel{R_{33}}S_{3}R_{31}
+            )     \\[6pt]
+            &   -S_{2}(
+                R_{21}\cancel{R_{11}}S_{1}R_{12} +R_{21}\cancel{R_{11}}\cancel{S_{12}}\cancel{R_{22}} +R_{21}\cancel{R_{11}}\cancel{S_{13}}R_{32} +      \\
+            &   R_{21}R_{12}\cancel{S_{21}}R_{12} +R_{21}R_{12}S_{2}\cancel{R_{22}} +R_{21}R_{12}\cancel{S_{23}}R_{32} +      \\
+            &   R_{21}R_{13}\cancel{S_{31}}R_{12} +R_{21}R_{13}\cancel{S_{32}}\cancel{R_{22}} +{\color{red}R_{21}R_{13}S_{3}R_{32}} +      \\
+            &   \cancel{R_{22}}R_{21}S_{1}R_{12} +\cancel{R_{22}}R_{21}\cancel{S_{12}}\cancel{R_{22}} +\cancel{R_{22}}R_{21}\cancel{S_{13}}R_{32} +      \\
+            &   \cancel{R_{22}}\cancel{R_{22}}\cancel{S_{21}}R_{12} +\cancel{R_{22}}\cancel{R_{22}}S_{2}\cancel{R_{22}} +\cancel{R_{22}}\cancel{R_{22}}\cancel{S_{23}}R_{32} +      \\
+            &   \cancel{R_{22}}R_{23}\cancel{S_{31}}R_{12} +\cancel{R_{22}}R_{23}\cancel{S_{32}}\cancel{R_{22}} +\cancel{R_{22}}R_{23}S_{3}R_{32} +      \\
+            &   {\color{red}R_{23}R_{31}S_{1}R_{12}} +R_{23}R_{31}\cancel{S_{12}}\cancel{R_{22}} +R_{23}R_{31}\cancel{S_{13}}R_{32} +      \\
+            &   R_{23}R_{32}\cancel{S_{21}}R_{12} +R_{23}R_{32}S_{2}\cancel{R_{22}} +R_{23}R_{32}\cancel{S_{23}}R_{32} +      \\
+            &   R_{23}\cancel{R_{33}}\cancel{S_{31}}R_{12} +R_{23}\cancel{R_{33}}\cancel{S_{32}}\cancel{R_{22}} +R_{23}\cancel{R_{33}}S_{3}R_{32}
+            )       \\[6pt]
+            &   -S_{3}(
+                R_{31}\cancel{R_{11}}S_{1}R_{13} +R_{31}\cancel{R_{11}}\cancel{S_{12}}R_{23} +R_{31}\cancel{R_{11}}\cancel{S_{13}}\cancel{R_{33}}  +     \\
+           &    R_{31}R_{12}\cancel{S_{21}}R_{13} +{\color{red}R_{31}R_{12}S_{2}R_{23}} +R_{31}R_{12}\cancel{S_{23}}\cancel{R_{33}}  +     \\
+           &    R_{31}R_{13}\cancel{S_{31}}R_{13} +R_{31}R_{13}\cancel{S_{32}}R_{23} +R_{31}R_{13}S_{3}\cancel{R_{33}}  +     \\
+           &    {\color{red}R_{32}R_{21}S_{1}R_{13}} +R_{32}R_{21}\cancel{S_{12}}R_{23} +R_{32}R_{21}\cancel{S_{13}}\cancel{R_{33}}  +     \\
+           &    R_{32}\cancel{R_{22}}\cancel{S_{21}}R_{13} +R_{32}\cancel{R_{22}}S_{2}R_{23} +R_{32}\cancel{R_{22}}\cancel{S_{23}}\cancel{R_{33}}  +     \\
+           &    R_{32}R_{23}\cancel{S_{31}}R_{13} +R_{32}R_{23}\cancel{S_{32}}R_{23} +R_{32}R_{23}S_{3}\cancel{R_{33}}  +     \\
+           &    \cancel{R_{33}}R_{31}S_{1}R_{13} +\cancel{R_{33}}R_{31}\cancel{S_{12}}R_{23} +\cancel{R_{33}}R_{31}\cancel{S_{13}}\cancel{R_{33}}  +     \\
+           &    \cancel{R_{33}}R_{32}\cancel{S_{21}}R_{13} +\cancel{R_{33}}R_{32}S_{2}R_{23} +\cancel{R_{33}}R_{32}\cancel{S_{23}}\cancel{R_{33}}  +     \\
+           &    \cancel{R_{33}}\cancel{R_{33}}\cancel{S_{31}}R_{13} +\cancel{R_{33}}\cancel{R_{33}}\cancel{S_{32}}R_{23} +\cancel{R_{33}}\cancel{R_{33}}S_{3}\cancel{R_{33}})
+    \end{split}
+\end{equation}
+\newpage
+Thus
+\begin{subequations}
+    \begin{equation}
+        \begin{split}
+            = &
+                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   + R_{13} R_{32} S_{2} R_{21})      \\
+                &   -S_{2}  (R_{21} R_{13} S_{3} R_{32}   + R_{23} R_{31} S_{1} R_{12})      \\  
+                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   + R_{32} R_{21} S_{1} R_{13})      \\  
+        \end{split}
+    \end{equation}
+    \begin{equation}
+        \begin{split}
+            = &
+                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   - R_{31} R_{23} S_{2} R_{12})      \\
+                &   -S_{2}  (-R_{12} R_{31} S_{3} R_{23}  + R_{23} R_{31} S_{1} R_{12})      \\  
+                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   - R_{23} R_{12} S_{1} R_{31})      \\  
+        \end{split}
+    \end{equation}
+\end{subequations}
+
+Factoring and grouping like terms clearly shows the first term is zero, namely,
+    \begin{equation}
+        \begin{split}
+            = &
+                \underbrace{-S_{1}S_{2}(R_{31}R_{23}R_{12} - R_{31}R_{23}R_{12})}_{=0}    \\
+            &   \underbrace{-S_{1}S_{3}(R_{23}R_{12}R_{31} - R_{23}R_{12}R_{31})}_{=0}    \\
+            &   \underbrace{-S_{2}S_{3}(R_{12}R_{31}R_{23} - R_{12}R_{31}R_{12})}_{=0}
+        \end{split}
+    \end{equation}
+Therefore
+\begin{equation}
+    -S_{ij}(R_{ik}R_{kl} S_{lm} R_{mj}) = 0
+\end{equation}
+which means that the entire $c_{7} $ term is zero, namely,
+\begin{equation}
+    \colorboxed{red}{
+        \svec : (\rvec \svec \rvec^2 - \rvec^2 \svec \rvec) = 0
+    }
+\end{equation}

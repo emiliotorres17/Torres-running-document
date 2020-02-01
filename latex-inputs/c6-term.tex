@@ -1,0 +1,69 @@
+\subsection{$c_{6}$ Term}
+Starting by separating the $c_{6}$ production term into two terms
+and evaluating them individually gives the following,
+\begin{equation}
+    \mathbf{S}:(\mathbf{S}^2\mathbf{R} - \mathbf{RS}^2) =
+        \underbrace{S_{ij}(S_{ik}S_{kl}R_{lk})}_{\equiv \text{term 1}}
+        -\underbrace{S_{ij}(R_{ik}S_{kl}S_{lk})}_{\equiv \text{term 2}}
+\end{equation}
+%-------------------------------------------------------------------------%
+% Term 1                                                                  %
+%-------------------------------------------------------------------------%
+\subsubsection{Term 1}
+\begin{equation}
+    \begin{split}
+        S_{ij}(S_{ik}S_{kl}R_{lj}) = & 
+            S_{1}(
+            S_{1}S_{1}\cancel{R_{11}} + S_{1}\cancel{S_{12}}R_{21} + S_{1}\cancel{S_{13}}R_{31} +   \\
+        &   \cancel{S_{12}}\cancel{S_{21}}\cancel{R_{11}} + \cancel{S_{12}}S_{2}R_{21} + \cancel{S_{12}}\cancel{S_{23}}R_{31} +   \\
+        &   \cancel{S_{13}}\cancel{S_{31}}\cancel{R_{11}} + \cancel{S_{13}}\cancel{S_{32}}R_{21} + \cancel{S_{13}}S_{3}R_{31} 
+            ) +   \\[6pt]
+        &   S_{2}(
+            \cancel{S_{21}}S_{1}R_{12} + \cancel{S_{21}}\cancel{S_{12}}\cancel{R_{22}} + \cancel{S_{21}}\cancel{S_{13}}R_{32} +   \\
+        &   S_{2}\cancel{S_{21}}R_{12} + S_{2}S_{2}\cancel{R_{22}} + S_{2}\cancel{S_{23}}R_{32} +   \\
+        &   \cancel{S_{23}}\cancel{S_{31}}R_{12} + \cancel{S_{23}}\cancel{S_{32}}\cancel{R_{22}} + \cancel{S_{23}}S_{3}R_{32} 
+            ) +   \\[6pt]
+        &   S_{3}(
+            \cancel{S_{31}}S_{1}R_{13} + \cancel{S_{31}}\cancel{S_{12}}R_{23} + \cancel{S_{31}}\cancel{S_{13}}\cancel{R_{33}} +   \\
+        &   \cancel{S_{32}}\cancel{S_{21}}R_{13} + \cancel{S_{32}}S_{2}R_{23} + \cancel{S_{32}}\cancel{S_{23}}\cancel{R_{33}} +   \\
+        &   S_{3}\cancel{S_{31}}R_{13} + S_{3}\cancel{S_{32}}R_{23} + S_{3}S_{3}\cancel{R_{33}} )
+    \end{split}
+\end{equation}
+where we can observe that there is no non-zero term, thus,
+\begin{equation}
+        S_{ij}(S_{ik}S_{kl}R_{lj}) = 0
+\end{equation}
+%-------------------------------------------------------------------------%
+% Term 2                                                                  %
+%-------------------------------------------------------------------------%
+\newpage
+\subsubsection{Term 2}
+\begin{equation}
+    \begin{split}
+        S_{ij}(R_{ik}S_{kl}S_{lj}) = & 
+            S_{1}(
+            \cancel{R_{11}}S_{1}S_{1} + \cancel{R_{11}}\cancel{S_{12}}\cancel{S_{21}} + \cancel{R_{11}}\cancel{S_{13}}\cancel{S_{31}}    +   \\
+        &   R_{12}\cancel{S_{21}}S_{1} + R_{12}S_{2}\cancel{S_{21}} + R_{12}\cancel{S_{23}}\cancel{S_{31}}    +   \\
+        &   R_{13}\cancel{S_{31}}S_{1} + R_{13}\cancel{S_{32}}\cancel{S_{21}} + R_{13}S_{3}\cancel{S_{31}}
+            ) + \\[6pt]
+        &   S_{2}(
+            R_{21}S_{1}\cancel{S_{12}} + R_{21}\cancel{S_{12}}S_{2} + R_{21}\cancel{S_{13}}\cancel{S_{32}}    +   \\
+        &   \cancel{R_{22}}\cancel{S_{21}}\cancel{S_{12}} + \cancel{R_{22}}S_{2}S_{2} + \cancel{R_{22}}\cancel{S_{23}}\cancel{S_{32}}    +   \\
+        &   R_{23}\cancel{S_{31}}\cancel{S_{12}} + R_{23}\cancel{S_{32}}S_{2} + R_{23}S_{3}\cancel{S_{32}}
+            ) + \\[6pt]
+        &   S_{3}(
+            R_{31}S_{1}\cancel{S_{13}} R_{31}\cancel{S_{12}}\cancel{S_{23}} R_{31}\cancel{S_{13}}S_{3}        +   \\
+        &   R_{32}\cancel{S_{21}}\cancel{S_{13}} R_{32}S_{2}\cancel{S_{23}} R_{32}\cancel{S_{23}}S_{3}        +   \\
+        &   \cancel{R_{33}}\cancel{S_{31}}\cancel{S_{13}} \cancel{R_{33}}\cancel{S_{32}}\cancel{S_{23}} \cancel{R_{33}}S_{3}S_{3})
+    \end{split}
+\end{equation}
+where again it is obvious there are no no-zero terms, thus,
+\begin{equation}
+        S_{ij}(S_{ik}S_{kl}R_{lj}) = 0
+\end{equation}
+and more importantly
+\begin{equation}
+    \colorboxed{red}{
+        \mathbf{S}:(\mathbf{S}^2\mathbf{R} - \mathbf{RS}^2) = 0
+    }
+\end{equation}

@@ -1,0 +1,42 @@
+\subsection{$c_{4}$ Term}
+Next we will show that the $c_{4}$ term in the eigen-frame is always zero
+by expanding the two terms and evaluating them separately, namely,
+\begin{equation}
+    \mathbf{S}:( \mathbf{SR} - \mathbf{RS}) = 
+        \underbrace{S_{ij}(S_{kj}R_{kj})}_{\equiv \text{term 1}} 
+        \underbrace{ - S_{ij}(R_{ik}S_{kj})}_{\equiv \text{term 2}}
+\end{equation}
+\subsubsection{Term 1}
+Evaluating term 1 gives,
+\begin{equation}
+    \begin{split}
+        S_{ij}(S_{ik}R_{kj}) = &
+                S_{1}(S_{1} \cancel{R_{11}} + \cancel{S_{12}} R_{21} + \cancel{S_{13}} R_{31}) + \\
+            &   S_{2}(\cancel{S_{21}} R_{12} + S_{2} \cancel{R_{22}} + \cancel{S_{23}} R_{32}) + \\
+            &   S_{3}(\cancel{S_{31}} R_{13} + \cancel{S_{32}} R_{23} + S_{3} \cancel{R_{33}})
+    \end{split}
+\end{equation}
+Therefore
+\begin{equation}
+    S_{ij}(S_{ik}R_{kj}) = 0 
+\end{equation}
+\subsubsection{Term 2}
+Evaluating term 2 gives,
+\begin{equation}
+    \begin{split}
+        S_{ij}(R_{ik}S_{kj}) = &
+               -S_{1}(\cancel{R_{11}} S_{1} + R_{12} \cancel{S_{21}} + R_{13} \cancel{S_{31}})+   \\
+            &  -S_{2}(R_{21} \cancel{S_{12}} + \cancel{R_{22}} S_{2} + R_{23} \cancel{S_{32}})+   \\
+            &  -S_{3}(R_{31} \cancel{S_{13}} + R_{32} \cancel{S_{32}} + \cancel{R_{33}} S_{3})
+    \end{split}
+\end{equation}
+Therefore
+\begin{equation}
+    S_{ij}(R_{ik}S_{kj}) = 0
+\end{equation}
+Thus
+\begin{equation}
+    \colorboxed{red}{
+        \mathbf{S}:(\mathbf{SR} - \mathbf{RS}) =0 
+    }
+\end{equation}

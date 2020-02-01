@@ -1,0 +1,45 @@
+\newcommand{\sgsvec}{\mathbf{\tau}} 
+\newcommand{\svec}{\mathbf{S}}
+\newcommand{\rvec}{\mathbf{R}}
+\newpage
+\section{SGS Representation}
+From the ``board notes'' the kinetic energy production term in the kinetic
+energy transport equation can be defined as
+\begin{equation}
+    P =  - \sgsvec:\svec
+\end{equation}
+Additionally, applying the following  formulation of the subgrid stress 
+\begin{equation}
+    \sgsvec = c_{1} \svec + c_{2} \svec^2 + c_{3} \rvec^2
+                + c_{4} \left(\svec \rvec - \rvec \svec \right)
+                + c_{5} \rvec \svec \rvec 
+                + c_{6} \left(\svec^2 \rvec - \rvec \svec^2 \right)
+                + c_{7} \left( \rvec \svec \rvec^2 - \rvec^2 \svec \rvec \right) 
+\end{equation}
+we can examine the energy production contributions term-by-term in the 
+eigen-frame where
+\begin{equation}
+    \svec =
+    \begin{pmatrix}
+        S_{1}      & 0         & 0         \\
+        0           & S_{2}    & 0         \\
+        0           & 0         & S_{3}    \\
+    \end{pmatrix}
+\end{equation}
+and,
+\begin{equation}
+    \rvec =
+    \begin{pmatrix}
+        0           & R_{12}    & -R_{31}   \\
+        -R_{12}     & 0         & R_{23}    \\
+        R_{31}      & -R_{23}   & 0         \\
+    \end{pmatrix}
+\end{equation}
+
+\input{latex-inputs/c1-term.tex}
+\input{latex-inputs/c2-term.tex}
+\input{latex-inputs/c3-term.tex}
+\input{latex-inputs/c4-term.tex}
+\input{latex-inputs/c5-term.tex}
+\input{latex-inputs/c6-term.tex}
+\input{latex-inputs/c7-term.tex}

@@ -1,0 +1,42 @@
+\subsection{$c_{2}$ Term}
+Next we examine the $c_{2}$ term and start by expanding and simplifying,
+\begin{equation}
+    \begin{split}
+        \mathbf{S}:\mathbf{S}^{2} = S_{ij}(S_{ik} S_{kj}) = &
+                S_{1}(S_{1} S_{1} + \cancel{S_{12} S_{21}}+ \cancel{S_{13} S_{31}}) + \\
+            &   S_{2}(\cancel{S_{21} S_{12}} + S_{2} S_{2} + \cancel{S_{23} S_{32}}) + \\
+            &   S_{3}(\cancel{S_{31} S_{13}} + \cancel{S_{32} S_{23}} + S_{3} S_{3})
+    \end{split}
+\end{equation}
+This gives
+\begin{equation}
+    S_{ij}(S_{ik} S_{kj}) = S_{1}^3 + S_{2}^{3} + S_{3}^{3}
+\end{equation}
+Next we can substitute in the following expression for $S_{2}$
+\begin{equation}
+    S_{2} =  -(S_{1} + S_{3})
+\end{equation}
+and simplify to get the following
+\begin{subequations}
+    \begin{equation}
+        S_{ij}(S_{ik} S_{kj}) = S_{1}^3 - (S_{1} + S_{3})^{3} + S_{3}^{3}
+    \end{equation}
+    \begin{equation}
+        S_{ij}(S_{ik} S_{kj}) = \cancel{S_{1}^3} - (\cancel{S_{1}^3} + 3S_{1}^2 S_{3} + 3 S_{1} S_{3}^2 + \cancel{S_{3}^3}) + \cancel{S_{3}^3}
+    \end{equation}
+    \begin{equation}
+        S_{ij}(S_{ik} S_{kj}) = \underbrace{-S_{1}^2 S_{3}}_{\geq 0} \underbrace{- 3 S_{1} S_{3}^2}_{\leq 0}
+    \end{equation}
+\end{subequations}
+
+Therefore $\mathbf{S}:\mathbf{S}^2 \leq 0$ if the following is true
+\begin{subequations}
+    \begin{equation}
+        S_{1} S_{3}^2 \geq S_{1}^2 S_{3}
+    \end{equation}
+    \begin{equation}
+        \colorboxed{red}{
+            \frac{S_{1}}{S_{3}} \leq 1
+        }
+    \end{equation}
+\end{subequations}

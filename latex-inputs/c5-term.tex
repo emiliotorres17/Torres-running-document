@@ -1,0 +1,110 @@
+\subsection{$c_{5}$ Term}
+Next we start the evaluation of the $c_{5}$ term by expanding and
+simplifying the following (note: terms in red are the only non-zero terms), 
+%\begin{equation}
+%    \begin{split}
+%        \mathbf{S}:\mathbf{RSR} = S_{ij}(R_{ik}S_{kl} R_{lj}) = &
+%                S_{1}(
+%                \cancel{R_{11}}S_{1}\cancel{R_{11}}+ \cancel{R_{11}}\cancel{S_{12}}R_{21} + \cancel{R_{11}}\cancel{S_{13}}R_{31} +   \\
+%            &   R_{12}\cancel{S_{21}}\cancel{R_{11}}+ {\color{red}R_{12}S_{2}R_{21}} + R_{12}\cancel{S_{23}}R_{31} +   \\
+%            &   R_{13}\cancel{S_{31}}\cancel{R_{11}}+ R_{13}\cancel{S_{32}}R_{21} + {\color{red}R_{13}S_{3}R_{31}}) 
+%            +    \\
+%            &   S_{2}(
+%                {\color{red}R_{21}S_{1}R_{12} }+ R_{21}\cancel{S_{12}}\cancel{R_{22}} + R_{21}\cancel{S_{13}}R_{32}) +  \\
+%            &   \cancel{R_{22}}\cancel{S_{21}}R_{12}+ \cancel{R_{22}}S_{2}\cancel{R_{22}} + \cancel{R_{22}}\cancel{S_{23}}R_{32}) +  \\
+%            &   R_{23}\cancel{S_{31}}R_{12}+ R_{23}\cancel{S_{32}}\cancel{R_{22}} + {\color{red}R_{23}S_{3}R_{32}})
+%            +   \\
+%            &   S_{3}(
+%                {\color{red}R_{31}S_{1}R_{13}} + R_{31}\cancel{S_{12}}R_{23} + R_{31}\cancel{S_{13}}\cancel{R_{33}}) +  \\
+%            &   R_{32}\cancel{S_{21}}R_{13}+ {\color{red}R_{32}S_{2}R_{23}} + R_{32}\cancel{S_{23}}\cancel{R_{33}}) +  \\
+%            &   \cancel{R_{33}}\cancel{S_{31}}R_{13}+ \cancel{R_{33}}\cancel{S_{32}}R_{23} + \cancel{R_{33}}S_{3}\cancel{R_{33}})
+%    \end{split}
+%\end{equation}
+%This simplifies to
+%\begin{subequations}
+%    \begin{equation}
+%        \begin{split}
+%            S_{ij}(R_{ik}S_{kl} R_{lj}) = &
+%                S_{1}(R_{12}S_{2}R_{21} + R_{13} S_{3} R_{31})   +   \\
+%            &   S_{2}(R_{21} S_{1} R_{12} + R_{23} S_{23} R_{32}) +   \\
+%            &   S_{3}(R_{31}S_{1}R_{13} + R_{32} S_{2} R_{23})
+%        \end{split}
+%    \end{equation}
+%    \begin{equation}
+%        \begin{split}
+%            S_{ij}(R_{ik}S_{kl} R_{lj}) = &
+%                -S_{1} S_{2} R_{12} R_{12} - S_{1} S_{2} R_{12} R_{12} +    \\
+%            &   -S_{1} S_{3} R_{31} R_{31} - S_{1} S_{3} R_{31} R_{31} +    \\
+%            &    -S_{2} S_{3} R_{23} R_{23} - S_{2} S_{3} R_{31} R_{31} 
+%        \end{split}
+%    \end{equation}
+%    \begin{equation}
+%        S_{ij}(R_{ik}S_{kl} R_{lj}) = 
+%            -2 S_{1} S_{2} R_{12}^2 -2 S_{1}S_{3} R_{31}^2 - 2 S_{2} S_{3} R_{23}^2
+%    \end{equation}
+%\end{subequations}
+\begin{subequations}
+\begin{align}
+        \mathbf{S}:\mathbf{RSR} = S_{ij}(R_{ik}S_{kl} R_{lj}) = &
+                S_{1}(
+                \cancel{R_{11}}S_{1}\cancel{R_{11}}+ \cancel{R_{11}}\cancel{S_{12}}R_{21} + \cancel{R_{11}}\cancel{S_{13}}R_{31} +   \notag		\\
+            &   R_{12}\cancel{S_{21}}\cancel{R_{11}}+ {\color{red}R_{12}S_{2}R_{21}} + R_{12}\cancel{S_{23}}R_{31} +   \notag		\\
+            &   R_{13}\cancel{S_{31}}\cancel{R_{11}}+ R_{13}\cancel{S_{32}}R_{21} + {\color{red}R_{13}S_{3}R_{31}}) 
+            +    \notag		\\
+            &   S_{2}(
+                {\color{red}R_{21}S_{1}R_{12} }+ R_{21}\cancel{S_{12}}\cancel{R_{22}} + R_{21}\cancel{S_{13}}R_{32}) +  		\\
+            &   \cancel{R_{22}}\cancel{S_{21}}R_{12}+ \cancel{R_{22}}S_{2}\cancel{R_{22}} + \cancel{R_{22}}\cancel{S_{23}}R_{32}) +  \notag		\\
+            &   R_{23}\cancel{S_{31}}R_{12}+ R_{23}\cancel{S_{32}}\cancel{R_{22}} + {\color{red}R_{23}S_{3}R_{32}}) +   \notag		\\
+            &   S_{3}(
+                {\color{red}R_{31}S_{1}R_{13}} + R_{31}\cancel{S_{12}}R_{23} + R_{31}\cancel{S_{13}}\cancel{R_{33}}) +  \notag		\\
+            &   R_{32}\cancel{S_{21}}R_{13}+ {\color{red}R_{32}S_{2}R_{23}} + R_{32}\cancel{S_{23}}\cancel{R_{33}}) +  \notag		\\
+            &   \cancel{R_{33}}\cancel{S_{31}}R_{13}+ \cancel{R_{33}}\cancel{S_{32}}R_{23} + \cancel{R_{33}}S_{3}\cancel{R_{33}})   \notag \\
+\notag		\\
+            = &
+                S_{1}(R_{12}S_{2}R_{21} + R_{13} S_{3} R_{31})   +   \notag		\\
+            &   S_{2}(R_{21} S_{1} R_{12} + R_{23} S_{23} R_{32}) +   		\\
+            &   S_{3}(R_{31}S_{1}R_{13} + R_{32} S_{2} R_{23})      \notag  \\
+\notag  \\
+            = &
+            -S_{1} S_{2} R_{12} R_{12} - S_{1} S_{2} R_{12} R_{12} +    \notag \\
+            &   -S_{1} S_{3} R_{31} R_{31} - S_{1} S_{3} R_{31} R_{31} +    \\
+            &    -S_{2} S_{3} R_{23} R_{23} - S_{2} S_{3} R_{31} R_{31} \notag \\    
+\notag  \\ 
+     = & 
+    -2 S_{1} S_{2} R_{12}^2 -2 S_{1}S_{3} R_{31}^2 - 2 S_{2} S_{3} R_{23}^2
+\end{align}
+    \label{eq:c5-term}
+\end{subequations}
+
+Substituting in $S_{2} = -S_{1} -S_{3}$ into Eq.~\ref{eq:c5-term} we get the following
+\begin{equation}
+    \mathbf{S}:\mathbf{SRS} = 
+        -2 S_{1} (-S_{1}-S_{3}) R_{12}^2 -2 S_{1}S_{3} R_{31}^2 - 2 (-S_{1}-S_{3}) S_{3} R_{23}^2
+\end{equation}
+Factoring the parenthesis and combing like terms then gives
+\begin{equation}
+    \mathbf{S}:\mathbf{SRS} = 
+        2 S_{1}^2 R_{12}^2 +2 S_{1}S_{3} R_{12}^2 -2S_{1}S_{3}R_{31}^2 + 2 S_{1} S_{3} R_{23}^2 + 2 S_{3}^2 R_{23}^2
+\end{equation}
+Therefore $\mathbf{S}:\mathbf{RSR} \leq 0$ when
+\begin{subequations}
+    \begin{equation}
+        2 S_{1}^2 R_{12}^2 +2 S_{1}S_{3} R_{12}^2 -2S_{1}S_{3}R_{31}^2 + 2 S_{1} S_{3} R_{23}^2 + 2 S_{3}^2 R_{23}^2 \leq 0
+    \end{equation}
+    \begin{equation}
+        S_{1}^2 R_{12}^2 + 2 S_{3} R_{23}^2 \leq S_{1} S_{3} (R_{31}^2 - R_{12}^2 - R_{23}^2)
+    \end{equation}
+    \text{Substituting in Eq.~\ref{eq:vorticity} gives}
+    \begin{equation}
+        S_{1}^2 \omega_{3}^2 + S_{3}^{2} \omega_{1}^2 \leq S_{1} S_{3} (\omega_{2}^2 - \omega_{3}^2 - \omega_{1}^2)
+    \end{equation}
+\end{subequations}
+
+Thus
+\begin{equation}
+    \colorboxed{red}{
+        \frac{\omega_{1}^2 + \omega_{2}^2 - \omega_{2}^2}
+        {\left(\frac{S_{1}}{S_{3}}\right)\omega_{3}^2 - \left(\frac{S_{3}}{S_{1}}\right) \omega_{1}^2} \geq 1
+    }
+\end{equation}
+
