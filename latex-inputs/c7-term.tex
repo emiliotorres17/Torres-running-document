@@ -50,7 +50,7 @@ Expanding the first term gives,
 Thus
 \begin{subequations}
     \begin{align}
-        = &
+        S_{ij}(R_{ik}S_{kl} R_{lm} R_{mj}) = &
                 S_{1} ( R_{12}S_{2}R_{23}R_{31}       + R_{13} S_{3} R_{32} R_{21}) +           \notag  \\
             &   S_{2} ( R_{21} S_{1} R_{13} R_{32}    + R_{23} S_{3} R_{31} R_{12}) +                   \\
             &   S_{3} ( R_{31} S_{1} R_{12} R_{23}    + R_{32} S_{2} R_{21} R_{13})             \notag  \\
@@ -119,28 +119,23 @@ Thus
 \newpage
 Thus
 \begin{subequations}
-    \begin{equation}
-        \begin{split}
-            = &
-                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   + R_{13} R_{32} S_{2} R_{21})      \\
-                &   -S_{2}  (R_{21} R_{13} S_{3} R_{32}   + R_{23} R_{31} S_{1} R_{12})      \\  
-                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   + R_{32} R_{21} S_{1} R_{13})      \\  
-        \end{split}
-    \end{equation}
-    \begin{equation}
-        \begin{split}
-            = &
-                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   - R_{31} R_{23} S_{2} R_{12})      \\
-                &   -S_{2}  (-R_{12} R_{31} S_{3} R_{23}  + R_{23} R_{31} S_{1} R_{12})      \\  
-                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   - R_{23} R_{12} S_{1} R_{31})      \\  
-        \end{split}
-    \end{equation}
+    \begin{align}
+            -S_{ij}(R_{ik}R_{kl} S_{lm} R_{mj})   = &
+                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   + R_{13} R_{32} S_{2} R_{21})      \notag \\
+                &   -S_{2}  (R_{21} R_{13} S_{3} R_{32}   + R_{23} R_{31} S_{1} R_{12})             \\  
+                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   + R_{32} R_{21} S_{1} R_{13})      \notag \\  
+                \notag \\
+                = &
+                    -S_{1}  (R_{12} R_{23} S_{3} R_{31}   - R_{31} R_{23} S_{2} R_{12})      \notag \\
+                &   -S_{2}  (-R_{12} R_{31} S_{3} R_{23}  + R_{23} R_{31} S_{1} R_{12})             \\  
+                &   -S_{3}  (R_{31} R_{12} S_{2} R_{23}   - R_{23} R_{12} S_{1} R_{31})     \notag   
+    \end{align}
 \end{subequations}
 
 Factoring and grouping like terms clearly shows the first term is zero, namely,
     \begin{equation}
         \begin{split}
-            = &
+         -S_{ij}(R_{ik}R_{kl} S_{lm} R_{mj})   = &
                 \underbrace{-S_{1}S_{2}(R_{31}R_{23}R_{12} - R_{31}R_{23}R_{12})}_{=0}    \\
             &   \underbrace{-S_{1}S_{3}(R_{23}R_{12}R_{31} - R_{23}R_{12}R_{31})}_{=0}    \\
             &   \underbrace{-S_{2}S_{3}(R_{12}R_{31}R_{23} - R_{12}R_{31}R_{12})}_{=0}

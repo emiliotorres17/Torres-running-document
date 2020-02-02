@@ -1,3 +1,4 @@
+\newcommand{\term}{\mathbf{S}:\mathbf{R}^2}
 \subsection{$c_{3}$ Term}
 Continuing the process with the $c_{3}$ term and applying Eq.~\ref{eq:Sij}
 we start by expanding and simplifying, namely,
@@ -12,55 +13,35 @@ we start by expanding and simplifying, namely,
 Substituting in $R_{21} = -R_{12}$, $R_{32} = -R_{23}$, and $R_{13} = -
 R_{31}$ then gives
 \begin{equation}
-    S_{ij}(R_{ik}R_{kj}) = 
+        \term = 
         S_{1} (-R_{12}^2 - R_{31}^2)  +
         S_{2} (-R_{12}^2 - R_{23}^2)  +
         S_{3} (-R_{31}^2 - R_{23}^2)
 \end{equation}
 This can be arranged as
 \begin{equation}
-    S_{ij}(R_{ik}R_{kj}) = 
+        \term = 
         R_{12}^{2} (\underbrace{-S_{1} - S_{2}}_{= S_{3}}) + 
         R_{23}^{2} (\underbrace{-S_{2} - S_{3}}_{= S_{1}}) + 
         R_{31}^{2} (\underbrace{-S_{1} - S_{3}}_{= S_{2}})  
 \end{equation}
 Thus
-%\begin{subequations}
-%    \begin{equation}
-%        = R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 S_{2}
-%    \end{equation}
-%    \begin{equation}
-%         = R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 (-S_{1} - S_{3}) 
-%    \end{equation}
-%    \begin{equation}
-%         = R_{12}^2 S_{3} + R_{23}^2 S_{1} - R_{31}^2 S_{1} - R_{31}^2 S_{3}  
-%    \end{equation}
-%    \begin{equation}
-%         = \underbrace{S_{1} R_{23}^2 - S_{3} R_{31}^{2}}_{\geq 0}
-%            \underbrace{-S_{1} R_{31}^2 + S_{3} R_{12}^2}_{\leq 0}
-%    \end{equation}
-%\end{subequations}
 \begin{subequations}
-\begin{eqnarray}
-    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 S_{2}                  \\
-    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 (-S_{1} - S_{3})       \\
-    & = & R_{12}^2 S_{3} + R_{23}^2 S_{1} - R_{31}^2 S_{1} - R_{31}^2 S_{3} \\ 
-    & = & \underbrace{S_{1} R_{23}^2 - S_{3} R_{31}^{2}}_{\geq 0}          
-            \underbrace{-S_{1} R_{31}^2 + S_{3} R_{12}^2}_{\leq 0}
-\end{eqnarray}
+    \begin{align}
+        \term = & 
+            R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 S_{2}                  \\
+         = & R_{12}^2 S_{3} + R_{23}^2 S_{1} + R_{31}^2 (-S_{1} - S_{3})       \\
+         = & R_{12}^2 S_{3} + R_{23}^2 S_{1} - R_{31}^2 S_{1} - R_{31}^2 S_{3} \\ 
+         = & \underbrace{S_{1} R_{23}^2 - S_{3} R_{31}^{2}}_{\geq 0}          
+                \underbrace{-S_{1} R_{31}^2 + S_{3} R_{12}^2}_{\leq 0}
+    \end{align}
 \end{subequations}
 
 Therefore $\mathbf{S}:\mathbf{R}^2 \leq 0$ when the following is true
 \begin{subequations}
-    %\begin{equation}
-    %    S_{1} R_{23}^2 - S_{3} R_{31}^2 -S_{1} R_{31}^2 + S_{3} R_{12}^2 \leq 0
-    %\end{equation}
     \begin{equation}
         S_{1} R_{23}^2 - S_{3} R_{31}^2 \leq S_{1} R_{31}^2 - S_{3} R_{12}^2
     \end{equation}
-    %\begin{equation}
-    %    S_{1} R_{23}^2 - S_{1} R_{31}^2 \leq S_{3} R_{31}^2 - S_{3} R_{12}^2
-    %\end{equation}
     \begin{equation}
         S_{1} (R_{23}^2 - R_{31}) \leq S_{3} ( R_{31}^2 - R_{12}^2)
     \end{equation}

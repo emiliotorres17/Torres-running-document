@@ -1,0 +1,224 @@
+\section{Summary of SGS Enstrophy Transport Evaluation}
+\subsection{$c_{1}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S} = 
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{S_{kl}}{x_{j}}{x_{l}} 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S} = &
+            -\varepsilon_{123}\tilde{\omega}_{1}\pdv{S_{3}}{x_{2}}{x_{3}}
+            -\varepsilon_{132}\tilde{\omega}_{1}\pdv{S_{2}}{x_{3}}{x_{2}}
+            -\varepsilon_{213}\tilde{\omega}_{2}\pdv{S_{3}}{x_{1}}{x_{3}}\\
+            & -\varepsilon_{231}\tilde{\omega}_{2}\pdv{S_{1}}{x_{3}}{x_{1}}
+            -\varepsilon_{312}\tilde{\omega}_{3}\pdv{S_{2}}{x_{1}}{x_{2}}
+	        -\varepsilon_{321}\tilde{\omega}_{3}\pdv{S_{1}}{x_{2}}{x_{1}}
+        \end{split}
+            }
+\end{equation}
+
+\subsection{$c_{2}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S}^2 = 
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(S_{km}S_{ml}\right) 
+\end{equation}
+            
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S}^2 = &
+            -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{3}}\left(S_{33}S_{33}\right)
+            -\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{2}}\left(S_{22}S_{22}\right)\\
+        &   -\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{3}}\left(S_{33}S_{33}\right)
+            -\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{1}}\left(S_{11}S_{11}\right)\\
+        &   -\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{2}}\left(S_{22}S_{22}\right)
+            -\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{1}}\left(S_{11}S_{11}\right)
+        \end{split}
+            }
+\end{equation}
+\newpage
+\subsection{$c_{3}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{R}^2 =
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(R_{km}R_{ml}\right) 
+\end{equation}
+        
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{R}^2 = &
+            -{\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(R_{32}R_{21}\right)}
+            -{\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(R_{31}R_{12}\right)}\\
+            &-{\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{3}}\left(R_{31}R_{13}\right)}
+            -{\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{3}}\left(R_{32}R_{23}\right)}\\
+            &-{\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(R_{23}R_{31}\right)}
+            -{\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{2}}\left(R_{21}R_{12}\right)}\\
+            &-{\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{2}}\left(R_{23}R_{32}\right)}
+            -{\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(R_{21}R_{13}\right)}\\
+            &-{\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(R_{32}R_{21}\right)}
+            -{\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(R_{31}R_{12}\right)}\\
+            &-{\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{3}}\left(R_{31}R_{13}\right)}
+            -{\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{3}}\left(R_{32}R_{23}\right)}\\
+            &-{\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{1}}\left(R_{12}R_{21}\right)}
+            -{\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{1}}\left(R_{13}R_{31}\right)}\\
+            &-{\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(R_{13}R_{32}\right)}
+            -{\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(R_{12}R_{23}\right)}\\
+            &-{\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(R_{23}R_{31}\right)}
+            -{\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{2}}\left(R_{21}R_{12}\right)}\\
+            &-{\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{2}}\left(R_{23}R_{32}\right)}
+            -{\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(R_{21}R_{13}\right)}\\
+            &-{\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{1}}\left(R_{12}R_{21}\right)}
+            -{\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{1}}\left(R_{13}R_{31}\right)}\\
+            &-{\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(R_{13}R_{32}\right)}
+            -{\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(R_{12}R_{23}\right)}
+        \end{split}
+            }
+\end{equation}
+
+\newpage
+\subsection{$c_{4}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \left(\mathbf{SR}-\mathbf{RS}\right)=
+        -\underbrace{\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{SR}}_{\equiv \text{term 1}}
+        +\underbrace{\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{RS}}_{\equiv \text{term 2}} 
+\end{equation}
+\subsubsection{Term 1}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{SR} = 
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(S_{km}R_{ml}\right) 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{SR} = & 
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(S_{33}R_{31}\right)
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(S_{33}R_{32}\right)\\
+                &-\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(S_{22}R_{21}\right)
+               -\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(S_{22}R_{23}\right)\\
+                &-\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(S_{33}R_{31}\right)
+               -\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(S_{33}R_{32}\right)\\
+                &-\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(S_{11}R_{12}\right)
+               -\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(S_{11}R_{13}\right)\\
+                &-\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(S_{22}R_{21}\right)
+               -\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(S_{22}R_{23}\right)\\
+                &-\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(S_{11}R_{12}\right)
+               -\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(S_{11}R_{13}\right)\\
+        \end{split}
+        }
+\end{equation}
+\subsubsection{Term 2}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{RS} = 
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(R_{km}S_{ml}\right) 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            \mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{RS} = & 
+                    \varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(R_{31}S_{11}\right)
+                    +\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(R_{32}S_{22}\right)\\
+                &   +\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(R_{21}S_{11}\right)
+                    +\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(R_{23}S_{33}\right)\\
+                &   +\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(R_{31}S_{11}\right)
+                    +\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(R_{32}S_{22}\right)\\
+                &   +\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(R_{12}S_{22}\right)
+                    +\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(R_{13}S_{33}\right)\\
+                &   +\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(R_{21}S_{11}\right)
+                    +\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(R_{23}S_{33}\right)\\
+                &   +\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(R_{12}S_{22}\right)
+                    +\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(R_{13}S_{33}\right)\\
+        \end{split}
+        }
+\end{equation}
+\subsection{$c_{5}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{RSR}= 
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(R_{km}S_{mn}R_{nl}\right) 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            -\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{RSR}= &
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(R_{32}S_{22}R_{21}\right)
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(R_{31}S_{11}R_{12}\right)\\
+                &-\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{3}}\left(R_{31}S_{11}R_{13}\right)
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{3}}\left(R_{32}S_{22}R_{23}\right)\\
+                &-\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(R_{23}S_{33}R_{31}\right)
+               -\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{2}}\left(R_{21}S_{11}R_{12}\right)\\
+                &-\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{2}}\left(R_{23}S_{33}R_{32}\right)
+               -\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(R_{21}S_{11}R_{13}\right)\\
+                &-\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(R_{32}S_{22}R_{21}\right)
+               -\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(R_{31}S_{11}R_{12}\right)\\
+                &-\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{3}}\left(R_{31}S_{11}R_{13}\right)
+               -\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{3}}\left(R_{32}S_{22}R_{23}\right)\\
+                &-\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{1}}\left(R_{12}S_{22}R_{21}\right)
+               -\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{1}}\left(R_{13}S_{33}R_{31}\right)\\
+                &-\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(R_{13}S_{33}R_{32}\right)
+               -\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(R_{12}S_{22}R_{23}\right)\\
+                &-\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(R_{23}S_{33}R_{31}\right)
+               -\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{2}}\left(R_{21}S_{11}R_{12}\right)\\
+                &-\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{2}}\left(R_{23}S_{33}R_{32}\right)
+               -\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(R_{21}S_{11}R_{13}\right)\\
+                &-\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{1}}\left(R_{12}S_{22}R_{21}\right)
+               -\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{1}}\left(R_{13}S_{33}R_{31}\right)\\
+                &-\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(R_{13}S_{33}R_{32}\right)
+               -\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(R_{12}S_{22}R_{23}\right)\\
+        \end{split}
+        }
+\end{equation}
+\newpage
+\subsection{$c_{6}$ Term}
+\begin{equation}
+    -\mathbf{\tilde{\omega}}\cdot\curl \div \left( \mathbf{S}^2 \mathbf{R} - \mathbf{R}\mathbf{S}^2\right)=
+        - \underbrace{\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S}^2 \mathbf{R}}_{\equiv \text{term 1}} 
+        + \underbrace{\mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{R} \mathbf{S}^2}_{\equiv \text{term 2}}
+\end{equation}
+\subsubsection{Term 1}
+\begin{equation}
+    - \mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S}^2 \mathbf{R} =  
+        -\varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(S_{km}S_{mn}R_{nl}\right) 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            - \mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{S}^2 \mathbf{R} = &  
+                -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(S_{33}S_{33}R_{31}\right)
+               -\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(S_{33}S_{33}R_{32}\right)\\
+                &-\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(S_{22}S_{22}R_{21}\right)
+               -\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(S_{22}S_{22}R_{23}\right)\\
+                &-\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(S_{33}S_{33}R_{31}\right)
+               -\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(S_{33}S_{33}R_{32}\right)\\
+                &-\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(S_{11}S_{11}R_{12}\right)
+               -\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(S_{11}S_{11}R_{13}\right)\\
+                &-\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(S_{22}S_{22}R_{21}\right)
+               -\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(S_{22}S_{22}R_{23}\right)\\
+                &-\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(S_{11}S_{11}R_{12}\right)
+               -\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(S_{11}S_{11}R_{13}\right)\\
+        \end{split}
+        }
+\end{equation}
+\subsubsection{Term 1}
+\begin{equation}
+    \mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{R} \mathbf{S}^2 =  
+        \varepsilon_{ijk} \tilde{\omega}_{i} \pdv{}{x_{j}}{x_{l}}\left(R_{km}S_{mn}S_{nl}\right) 
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            \mathbf{\tilde{\omega}}\cdot\curl \div \mathbf{R} \mathbf{S}^2 = &  
+                 \varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{1}}\left(R_{31}S_{11}S_{11}\right)
+               +\varepsilon_{123}\tilde{\omega}_{1}\pdv{}{x_{2}}{x_{2}}\left(R_{32}S_{22}S_{22}\right)\\
+                &+\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{1}}\left(R_{21}S_{11}S_{11}\right)
+               +\varepsilon_{132}\tilde{\omega}_{1}\pdv{}{x_{3}}{x_{3}}\left(R_{23}S_{33}S_{33}\right)\\
+                &+\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{1}}\left(R_{31}S_{11}S_{11}\right)
+               +\varepsilon_{213}\tilde{\omega}_{2}\pdv{}{x_{1}}{x_{2}}\left(R_{32}S_{22}S_{22}\right)\\
+                &+\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{2}}\left(R_{12}S_{22}S_{22}\right)
+               +\varepsilon_{231}\tilde{\omega}_{2}\pdv{}{x_{3}}{x_{3}}\left(R_{13}S_{33}S_{33}\right)\\
+                &+\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{1}}\left(R_{21}S_{11}S_{11}\right)
+               +\varepsilon_{312}\tilde{\omega}_{3}\pdv{}{x_{1}}{x_{3}}\left(R_{23}S_{33}S_{33}\right)\\
+                &+\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{2}}\left(R_{12}S_{22}S_{22}\right)
+               +\varepsilon_{321}\tilde{\omega}_{3}\pdv{}{x_{2}}{x_{3}}\left(R_{13}S_{33}S_{33}\right)\\
+        \end{split}
+        }
+\end{equation}
