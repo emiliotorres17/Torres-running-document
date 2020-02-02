@@ -33,6 +33,7 @@ if __name__ == "__main__":
     string = ""
     string  += "\\begin{equation}\n"
     string  += "\t\\begin{split}\n"
+    string  += " -\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{S} ="
     for i in range(1,4):
         for j in range(1,4):
             for k in range(1,4):
@@ -69,6 +70,7 @@ if __name__ == "__main__":
     string = ""
     string  += "\\begin{equation}\n"
     string  += "\t\\begin{split}\n"
+    string  += "&-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{S}^2 =  \\\\ "
     for i in range(1,4):
         for j in range(1,4):
             for k in range(1,4):
@@ -117,6 +119,7 @@ if __name__ == "__main__":
     string = ""
     string  += "\\begin{equation}\n"
     string  += "\t\\begin{split}\n"
+    string  += "&-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{R}^2 = \\\\"
     for i in range(1,4):
         for j in range(1,4):
             for k in range(1,4):
@@ -165,6 +168,7 @@ if __name__ == "__main__":
     string = ""
     string  += "\\begin{equation}\n"
     string  += "\t\\begin{split}\n"
+    string  += "&-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{SR} = \\\\"
     for i in range(1,4):
         for j in range(1,4):
             for k in range(1,4):
@@ -213,6 +217,7 @@ if __name__ == "__main__":
     string = ""
     string  += "\\begin{equation}\n"
     string  += "\t\\begin{split}\n"
+    string  += "&\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{RS} = \\\\"
     for i in range(1,4):
         for j in range(1,4):
             for k in range(1,4):
@@ -263,6 +268,7 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     string = ""
     for i in range(1,4):
+        string  += "$-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{RSR}$ for $i=%i$\n"             %(i) 
         string  += "\\begin{equation}\n"
         string  += "\t\\begin{split}\n"
         for j in range(1,4):
@@ -314,6 +320,7 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     string = ""
     for i in range(1,4):
+        string  += "$-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{S}^2 \\mathbf{R}$ for $i=%i$\n"     %(i)  
         string  += "\\begin{equation}\n"
         string  += "\t\\begin{split}\n"
         for j in range(1,4):
@@ -365,6 +372,7 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     string = ""
     for i in range(1,4):
+        string  += "$\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{R} \\mathbf{S}^2$ for $i=%i$\n"  %(i) 
         string  += "\\begin{equation}\n"
         string  += "\t\\begin{split}\n"
         for j in range(1,4):
