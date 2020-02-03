@@ -422,3 +422,93 @@ if __name__ == "__main__":
     f   = open(latex_path + "c6-2-enst.tex", "w")
     f.write(string)
     f.close()
+    #---------------------------------------------------------------------#
+    # c7-1-term                                                           #
+    #---------------------------------------------------------------------#
+    count   = 0
+    string  = ""
+    #string  += "$-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{R} \\mathbf{S} \\mathbf{R}^2$"
+    #string  += "for $i=%i$\n"       %(i) 
+    for i in range(1,4):
+        string  += "\\begin{equation}\n"
+        string  += "\t\\begin{split}\n"
+        for j in range(1,4):
+            for k in range(1,4):
+                if i != j and j != k and i != k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                for q in range(1,4):
+                                    if count == 2:
+                                        string  += "&"
+                                    if k!=m and m==n and n!=q and q!=l:
+                                        count   += 1
+                                        string  += "\t\t-"
+                                        string  += "\\varepsilon_{%i%i%i}"      %(i,j,k)
+                                        string  += "\\tilde{"
+                                        string  += "\\omega}_{%i}"              %(i)
+                                        string  += "\\pdv{}"
+                                        string  += "{x_{%i}}{x_{%i}}"           %(j,l)
+                                        string  += "\\left("
+                                        string  += "R_{%i%i}"                   %(k,m)
+                                        string  += "S_{%i%i}"                   %(m,n)
+                                        string  += "R_{%i%i}"                   %(n,q)
+                                        string  += "R_{%i%i}"                   %(q,l)
+                                        string  += "\\right)"
+                                    if count == 2:
+                                        string  += "\\\\"
+                                        string  += "\n"
+                                        count   = 0
+        string  += "\t\\end{split}\n"
+        string  += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Storing c6-2-term                                                   #
+    #---------------------------------------------------------------------#
+    f   = open(latex_path + "c7-1-enst.tex", "w")
+    f.write(string)
+    f.close()
+    #---------------------------------------------------------------------#
+    # c7-1-term                                                           #
+    #---------------------------------------------------------------------#
+    count   = 0
+    string  = ""
+    #string  += "$-\\mathbf{\\tilde{\\omega}}\\cdot\\curl \\div \\mathbf{R} \\mathbf{S} \\mathbf{R}^2$"
+    #string  += "for $i=%i$\n"       %(i) 
+    for i in range(1,4):
+        string  += "\\begin{equation}\n"
+        string  += "\t\\begin{split}\n"
+        for j in range(1,4):
+            for k in range(1,4):
+                if i != j and j != k and i != k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                for q in range(1,4):
+                                    if count == 2:
+                                        string  += "&"
+                                    if k!=m and m!=n and n==q and q!=l:
+                                        count   += 1
+                                        string  += "\t\t-"
+                                        string  += "\\varepsilon_{%i%i%i}"      %(i,j,k)
+                                        string  += "\\tilde{"
+                                        string  += "\\omega}_{%i}"              %(i)
+                                        string  += "\\pdv{}"
+                                        string  += "{x_{%i}}{x_{%i}}"           %(j,l)
+                                        string  += "\\left("
+                                        string  += "R_{%i%i}"                   %(k,m)
+                                        string  += "R_{%i%i}"                   %(m,n)
+                                        string  += "S_{%i%i}"                   %(n,q)
+                                        string  += "R_{%i%i}"                   %(q,l)
+                                        string  += "\\right)"
+                                    if count == 2:
+                                        string  += "\\\\"
+                                        string  += "\n"
+                                        count   = 0
+        string  += "\t\\end{split}\n"
+        string  += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Storing c6-2-term                                                   #
+    #---------------------------------------------------------------------#
+    f   = open(latex_path + "c7-2-enst.tex", "w")
+    f.write(string)
+    f.close()
