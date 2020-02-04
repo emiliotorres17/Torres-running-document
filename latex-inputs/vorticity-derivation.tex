@@ -1,0 +1,124 @@
+\newcommand{\bfvec}[1]{%
+    \mathbf{#1}
+    }
+\newcommand{\filtuvec}{%
+    \mathbf{\tilde{u}}
+    }
+\newcommand{\filtsvec}{%
+    \mathbf{\tilde{S}}
+    }
+\newcommand{\filtwvec}{%
+    \mathbf{\tilde{\omega}}
+    }
+\newcommand{\filterns}{%
+    \pdv{\filtuvec}{t} + \mathbf{\tilde{u}} \cdot \grad{\mathbf{\tilde{u}}} = 
+        -\grad{p} + \nu \laplacian{\mathbf{\tilde{u}}} - \div \mathbf{\tau}
+    }
+\section{Filtered Enstrophy Equation}
+To derive the filtered enstrophy equation we start by determining the
+filtered vorticity equation from the filtered Navier-Stokes equations,
+\begin{subequations}
+    \begin{equation}
+        \div \filtuvec = 0
+        \label{eq:filtered-mass}
+    \end{equation}
+    \begin{equation}
+        \filterns
+        \label{eq:filtered-momentum}
+    \end{equation}
+\end{subequations}
+
+The transport equation for vorticity, $\mathbf{\tilde{\omega}} \equiv \curl
+\filtuvec $, can be obtained by taking the curl of the above equation. 
+Applying the curl to Eq.~\ref{eq:filtered-momentum} gives
+\begin{subequations}
+    \begin{equation}
+        \curl \left(\filterns\right)
+    \end{equation}
+    \begin{equation}
+        \pdv{\filtwvec}{t} + \filtuvec \cdot \grad \filtwvec =
+            \filtwvec \cdot \grad \filtuvec + \nu \laplacian{\filtwvec}
+            - \curl \div \mathbf{\tau}
+    \end{equation}
+    \label{eq:filtered-vorticity}
+\end{subequations}
+
+Note in deriving Eq.~\ref{eq:filtered-vorticity} we have applied the following vector
+identities
+\begin{subequations}
+    \begin{equation}
+        \bfvec{u} \cdot \grad \bfvec{u} = 
+                \grad\left(\frac{1}{2}\bfvec{u} \cdot \bfvec{u}\right) 
+                - \bfvec{u} \cp \left(\curl \bfvec{u}\right)
+    \end{equation}
+    \begin{equation}
+        \curl \grad \phi = 0
+    \end{equation}
+    \begin{equation}
+        \div \curl \mathbf{a} = 0
+    \end{equation}
+\end{subequations}
+
+Next we can multiply Eq.~\ref{eq:filtered-vorticity} to obtain the filtered
+enstrophy, $\Omega \equiv \frac{1}{2} \filtwvec \filtwvec$, transport
+equation, namely,
+\begin{subequations}
+    \begin{equation}
+        \filtwvec \cdot \bigg(
+        \pdv{\filtwvec}{t} + \filtuvec \cdot \grad \filtwvec =
+            \filtwvec \cdot \grad \filtuvec + \nu \laplacian{\filtwvec}
+            - \curl \div \mathbf{\tau}
+            \bigg)
+    \end{equation}
+    \begin{equation}
+        \pdv{\Omega}{t} + \filtuvec \cdot \grad \Omega = 
+            \filtwvec \cdot \filtsvec \cdot \filtwvec + \nu \laplacian{\Omega}
+            - \nu \grad \filtwvec : \grad \filtwvec 
+            - \filtwvec \cdot \curl \div \mathbf{\tau}
+    \end{equation}
+\end{subequations}
+
+
+\subsection{Subgrid Stress Enstrophy Evaluation}
+As we shall see, it is helpful to evaluate transport equations in terms of
+their physical representation (e.g., transport, dissipation, and
+production). In the following we will separate the subgrid stress term into
+both transport and production terms in order to obtain physical insight.
+We begin the evaluation by expressing the subgrid stress in index notation,
+\begin{equation}
+    -\filtwvec \cdot \curl \div \tau =
+        - \varepsilon_{ijk} \tilde{\omega}_{i} 
+        \pdv{}{x_{j}} \pdv{}{x_{l}} \tau_{kl}
+\end{equation}
+Interchanging the linear derivative operators and moving the Levi-Civita
+inside the first derivative gives
+\begin{equation}
+        - \varepsilon_{ijk} \tilde{\omega}_{i}  \pdv{}{x_{j}} \pdv{}{x_{l}}
+        \tau_{kl} =
+        - \tilde{\omega}_{i}  \pdv{}{x_{l}} \underbrace{\varepsilon_{ijk} \pdv{}{x_{j}}
+        \tau_{kl}}_{\equiv \curl \mathbf{\tau}}
+\end{equation}
+Substituting in $\Psi_{il}$ for $\curl \mathbf{\tau}$ the following can be 
+arranged to get 
+\begin{equation}
+    \begin{split}
+        - \tilde{\omega}_{i}  \pdv{}{x_{l}} \varepsilon_{ijk} \pdv{}{x_{j}} \tau_{kl}  = &
+            -\tilde{\omega}_{i} \pdv{\Psi_{il}}{x_{l}} \\
+            & = - \underbrace{\pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)}_{\equiv \text{Transport}}
+            + \underbrace{\Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}}_{\equiv \text{Production}}
+    \end{split}
+    \label{eq:trans-enstrophy}
+\end{equation}
+Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that that the transport
+of enstrophy from the subgrid stress is due to 
+\begin{equation}
+    \colorboxed{red}{
+        - \pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)
+    }
+\end{equation}
+while the production is caused by
+\begin{equation}
+    \colorboxed{red}{
+        \Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}
+    }
+\end{equation}
