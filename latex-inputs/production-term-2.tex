@@ -1,0 +1,32 @@
+\subsection{$c_{2}$ Term}
+\begin{equation}
+    \grad \filtomega \cdot \curl \filtS^{2} = 
+        \varepsilon_{ijk} \pdv{\filtvar{\omega}_{i}}{x_{l}}
+        \pdv{}{x_{j}} \left(\widetilde{S}_{km} \widetilde{S}_{ml} \right)
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \grad \filtomega \cdot \curl \filtS^{2} = & 
+                \varepsilon_{123}\pdv{\tilde{\omega}_{1}}{x_{3}}\cdot\pdv{}{x_{2}}\left(\widetilde{S}_{33}\widetilde{S}_{33}\right)
+                +\varepsilon_{132}\pdv{\tilde{\omega}_{1}}{x_{2}}\cdot\pdv{}{x_{3}}\left(\widetilde{S}_{22}\widetilde{S}_{22}\right) \\
+            &   +\varepsilon_{213}\pdv{\tilde{\omega}_{2}}{x_{3}}\cdot\pdv{}{x_{1}}\left(\widetilde{S}_{33}\widetilde{S}_{33}\right) 
+                +\varepsilon_{231}\pdv{\tilde{\omega}_{2}}{x_{1}}\cdot\pdv{}{x_{3}}\left(\widetilde{S}_{11}\widetilde{S}_{11}\right) \\
+            &   +\varepsilon_{312}\pdv{\tilde{\omega}_{3}}{x_{2}}\cdot\pdv{}{x_{1}}\left(\widetilde{S}_{22}\widetilde{S}_{22}\right)
+                +\varepsilon_{321}\pdv{\tilde{\omega}_{3}}{x_{1}}\cdot\pdv{}{x_{2}}\left(\widetilde{S}_{11}\widetilde{S}_{11}\right)
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \colorboxed{red}{
+    \begin{split}
+        \grad \filtomega \cdot \curl \filtS^{2} = & 
+                \pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{}{x_{2}}\left(\widetilde{S}_{3}\widetilde{S}_{3}\right)
+                -\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{}{x_{3}}\left(\widetilde{S}_{2}\widetilde{S}_{2}\right) \\
+            &   -\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{}{x_{1}}\left(\widetilde{S}_{3}\widetilde{S}_{3}\right) 
+                +\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{}{x_{3}}\left(\widetilde{S}_{1}\widetilde{S}_{1}\right) \\
+            &   +\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{}{x_{1}}\left(\widetilde{S}_{2}\widetilde{S}_{2}\right)
+                -\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{}{x_{2}}\left(\widetilde{S}_{1}\widetilde{S}_{1}\right)
+    \end{split}
+    }
+\end{equation}

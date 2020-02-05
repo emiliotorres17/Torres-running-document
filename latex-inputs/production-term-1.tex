@@ -1,0 +1,30 @@
+\subsection{$c_{1}$ Term}
+\begin{equation}
+    \grad \filtomega \cdot \curl \filtS = 
+        \varepsilon_{ijk} \pdv{\filtvar{\omega}_{i}}{x_{l}}
+        \pdv{\filtvar{S}_{kl}}{x_{j}}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        \grad \filtomega \cdot \curl \filtS  = &   
+                \varepsilon_{123}\pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{\widetilde{S}_{33}}{x_{2}}
+                +\varepsilon_{132}\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{\widetilde{S}_{22}}{x_{3}}
+                +\varepsilon_{213}\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{\widetilde{S}_{33}}{x_{1}}   \\
+            &   +\varepsilon_{231}\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{\widetilde{S}_{11}}{x_{3}}
+                +\varepsilon_{312}\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{\widetilde{S}_{22}}{x_{1}}
+ 	            +\varepsilon_{321}\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{\widetilde{S}_{11}}{x_{2}}
+    \end{split}
+\end{equation}
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            \grad \filtomega \cdot \curl \filtS  = &   
+                    \pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{\widetilde{S}_{3}}{x_{2}}
+                    -\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{\widetilde{S}_{2}}{x_{3}}
+                    -\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{\widetilde{S}_{3}}{x_{1}}   \\
+                &   +\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{\widetilde{S}_{1}}{x_{3}}
+                    +\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{\widetilde{S}_{2}}{x_{1}}
+ 	                -\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{\widetilde{S}_{1}}{x_{2}}
+        \end{split}
+    }
+\end{equation}
