@@ -8,13 +8,15 @@ energy transport equation can be defined as
 \begin{equation}
     P =  - \sgsvec:\svec
 \end{equation}
-Additionally, applying the following  formulation of the subgrid stress 
+Additionally, applying the following  formulation of the subgrid stress
+(SGS) 
 \begin{equation}
     \sgsvec = c_{1} \svec + c_{2} \svec^2 + c_{3} \rvec^2
                 + c_{4} \left(\svec \rvec - \rvec \svec \right)
                 + c_{5} \rvec \svec \rvec 
                 + c_{6} \left(\svec^2 \rvec - \rvec \svec^2 \right)
                 + c_{7} \left( \rvec \svec \rvec^2 - \rvec^2 \svec \rvec \right) 
+                \label{eq:SGS-tf-8}
 \end{equation}
 we can examine the energy production contributions term-by-term in the 
 eigen-frame where

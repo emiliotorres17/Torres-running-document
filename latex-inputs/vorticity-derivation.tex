@@ -116,9 +116,17 @@ of enstrophy from the subgrid stress is due to
         - \pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)
     }
 \end{equation}
-while the production is caused by
+while the production of enstrophy from SGS $P_{\Omega}$ is given by
 \begin{equation}
     \colorboxed{red}{
-        \Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}
+        P_{\Omega} \equiv  \Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}  =
+            \varepsilon_{ijk} \pdv{\widetilde{\omega}_{i}}{x_{l}}
+            \pdv{\tau_{kl}}{x_{j}}
+            \label{eq:SGS-enstrophy-production}
     }
 \end{equation}
+Similarly to the above analysis of the kinetic production, we will next 
+systematically evaluate the enstrophy production using the SGS given in
+Eq.~\ref{eq:SGS-tf-8} 
+%\input{latex-inputs/c1-enstrophy-production-2}
+\input{latex-inputs/c2-enstrophy-production-2}

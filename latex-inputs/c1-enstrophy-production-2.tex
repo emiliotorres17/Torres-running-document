@@ -1,0 +1,43 @@
+\subsection{Enstrophy Production Evaluation}
+\subsubsection{$c_{1}$ Term}
+We begin by substituting in the first term of Eq.~\ref{eq:SGS-tf-8} and
+Eq.~\ref{eq:Sij} into
+Eq.~\ref{eq:SGS-enstrophy-production} and expanding the indices to get   
+\begin{equation}
+	\begin{split}
+        \varepsilon_{ijk}\pdv{\omega}{x_{l}} \cdot\pdv{S_{kl}}{x_{j}} = &  
+		\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{S_{31}}{x_{2}}}
+		+\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{S_{32}}{x_{2}}}
+		+{\color{red}\varepsilon_{123}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{S_{3}}{x_{2}}}
+\\		&+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{S_{21}}{x_{3}}}
+		+{\color{red}\varepsilon_{132}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{S_{2}}{x_{3}}}
+		+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{S_{23}}{x_{3}}}
+\\		&+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{S_{31}}{x_{1}}}
+		+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{S_{32}}{x_{1}}}
+		+{\color{red}\varepsilon_{213}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{S_{3}}{x_{1}}}
+\\		&+{\color{red}\varepsilon_{231}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{S_{1}}{x_{3}}}
+		+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{S_{12}}{x_{3}}}
+		+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{S_{13}}{x_{3}}}
+\\		&+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{S_{21}}{x_{1}}}
+		+{\color{red}\varepsilon_{312}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{S_{2}}{x_{1}}}
+		+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{S_{23}}{x_{1}}}
+\\		&+{\color{red}\varepsilon_{321}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{S_{1}}{x_{2}}}
+		+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{S_{12}}{x_{2}}}
+		+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{S_{13}}{x_{2}}}
+\\	\end{split}
+\end{equation}
+Applying the definition of Levi-Civitas tensor given in
+Eq.~\ref{eq:levi-civitas} gives
+\begin{equation}
+    \colorboxed{red}{
+        \begin{split}
+            \varepsilon_{ijk}\pdv{\omega}{x_{l}} \cdot\pdv{S_{kl}}{x_{j}} = &  
+                \pdv{\omega_{1}}{x_{3}}\cdot\pdv{S_{3}}{x_{2}} 
+                -\pdv{\omega_{1}}{x_{2}}\cdot\pdv{S_{2}}{x_{3}}
+                -\pdv{\omega_{2}}{x_{3}}\cdot\pdv{S_{3}}{x_{1}}   \\
+            &   +\pdv{\omega_{2}}{x_{1}}\cdot\pdv{S_{1}}{x_{3}}
+                +\pdv{\omega_{3}}{x_{2}}\cdot\pdv{S_{2}}{x_{1}}
+                -\pdv{\omega_{3}}{x_{1}}\cdot\pdv{S_{1}}{x_{2}}
+        \end{split}
+    }
+\end{equation}

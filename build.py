@@ -25,13 +25,18 @@ if __name__ == "__main__":
     # Main preamble                                                       #
     #---------------------------------------------------------------------#
     call(["clear"])
+    sep         = os.sep
+    pwd         = os.getcwd()
+    python_path = pwd + "%cpython%c"            %(sep, sep)
     #---------------------------------------------------------------------#
     # Running python                                                      #
     #---------------------------------------------------------------------#
+    os.chdir(python_path)
     pyfile  = "enstrophy-production.py"
     call(["python3", pyfile])
     print("**** Successful Python Run ****")
     time.sleep(3)
+    os.chdir(pwd)
     #---------------------------------------------------------------------#
     # Running LaTeX                                                       #
     #---------------------------------------------------------------------#

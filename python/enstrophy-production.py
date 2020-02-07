@@ -57,7 +57,7 @@ if __name__ == "__main__":
     call(["clear"])
     sep         = os.sep
     pwd         = os.getcwd()
-    latex_path  = pwd + "%clatex-inputs%c"          %(sep,sep)
+    latex_path  = pwd + "%c..%clatex-inputs%c"      %(sep,sep,sep)
     #---------------------------------------------------------------------#
     # C1 term                                                             #
     #---------------------------------------------------------------------#
@@ -294,5 +294,206 @@ if __name__ == "__main__":
     # Writing file                                                        #
     #---------------------------------------------------------------------#
     f = open(latex_path + "c4-2-enstrophy-production.tex", "w")
+    f.write(string)
+    f.close()
+    #---------------------------------------------------------------------#
+    # C5 term                                                             #
+    #---------------------------------------------------------------------#
+    crit    = False
+    string  = ""
+    string  += "\\begin{equation}\n"
+    string  += "\t\\begin{split}\n"
+    string  += "\t\t & \\varepsilon_{ijk}"
+    string  += "\\pdv{\\omega}{x_{l}} \\cdot"
+    string  += "\\pdv{}{x_{j}}"
+    string  += "\\left(R_{km}S_{mn}R_{nl}\\right)"
+    string  += " =  \\\\ \n"
+    count   = 0
+    for i in range(1,4):
+        for j in range(1,4):
+            for k in range(1,4):
+                if i!=j and j!=k and i!=k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                if k!=m and m==n and n!=l:
+                                    string  += "\t\t"
+                                    if count == 2:
+                                        string  += "\\\\ \n"
+                                        string += "&"
+                                        count   = 0
+                                    if crit is not False:
+                                        string  += ""
+                                        crit    = True
+                                    else:
+                                        string  += "+"
+                                    string    += "\\varepsilon_{%i%i%i}"  %(i,j,k)
+                                    string    += "\\pdv{\omega_{%i}}"     %(i)
+                                    string    += "{x_{%i}}"               %(l)
+                                    string    += "\\cdot"
+                                    string    += "\\pdv{}"
+                                    string    += "{x_{%i}}"               %(j)
+                                    string    += "\\left("
+                                    string    += "R_{%i%i}"               %(k,m)
+                                    string    += "S_{%i%i}"               %(m,n)
+                                    string    += "R_{%i%i}"               %(n,l)
+                                    string    += "\\right)\n"
+                                    count       += 1
+    string += "\t\\end{split}\n"
+    string += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Writing file                                                        #
+    #---------------------------------------------------------------------#
+    f = open(latex_path + "c5-enstrophy-production.tex", "w")
+    f.write(string)
+    f.close()
+    #---------------------------------------------------------------------#
+    # C6-1 term                                                           #
+    #---------------------------------------------------------------------#
+    crit    = False
+    string  = ""
+    string  += "\\begin{equation}\n"
+    string  += "\t\\begin{split}\n"
+    string  += "\t\t & \\varepsilon_{ijk}"
+    string  += "\\pdv{\\omega}{x_{l}} \\cdot"
+    string  += "\\pdv{}{x_{j}}"
+    string  += "\\left(R_{km}S_{mn}R_{nl}\\right)"
+    string  += " =  \\\\ \n"
+    count   = 0
+    for i in range(1,4):
+        for j in range(1,4):
+            for k in range(1,4):
+                if i!=j and j!=k and i!=k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                if k==m and m!=n and n==l:
+                                    string  += "\t\t"
+                                    if count == 2:
+                                        string  += "\\\\ \n"
+                                        string += "&"
+                                        count   = 0
+                                    if crit is not False:
+                                        string  += ""
+                                        crit    = True
+                                    else:
+                                        string  += "+"
+                                    string    += "\\varepsilon_{%i%i%i}"  %(i,j,k)
+                                    string    += "\\pdv{\omega_{%i}}"     %(i)
+                                    string    += "{x_{%i}}"               %(l)
+                                    string    += "\\cdot"
+                                    string    += "\\pdv{}"
+                                    string    += "{x_{%i}}"               %(j)
+                                    string    += "\\left("
+                                    string    += "S_{%i%i}"               %(k,m)
+                                    string    += "R_{%i%i}"               %(m,n)
+                                    string    += "S_{%i%i}"               %(n,l)
+                                    string    += "\\right)\n"
+                                    count       += 1
+    string += "\t\\end{split}\n"
+    string += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Writing file                                                        #
+    #---------------------------------------------------------------------#
+    f = open(latex_path + "c6-1-enstrophy-production.tex", "w")
+    f.write(string)
+    f.close()
+    #---------------------------------------------------------------------#
+    # C6-2 term                                                           #
+    #---------------------------------------------------------------------#
+    crit    = False
+    string  = ""
+    string  += "\\begin{equation}\n"
+    string  += "\t\\begin{split}\n"
+    string  += "\t\t & \\varepsilon_{ijk}"
+    string  += "\\pdv{\\omega}{x_{l}} \\cdot"
+    string  += "\\pdv{}{x_{j}}"
+    string  += "\\left(R_{km}S_{mn}S_{nl}\\right)"
+    string  += " =  \\\\ \n"
+    count   = 0
+    for i in range(1,4):
+        for j in range(1,4):
+            for k in range(1,4):
+                if i!=j and j!=k and i!=k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                if k!=m and m==n and n==l:
+                                    string  += "\t\t"
+                                    if count == 2:
+                                        string  += "\\\\ \n"
+                                        string += "&"
+                                        count   = 0
+                                    if crit is not False:
+                                        string  += ""
+                                        crit    = True
+                                    else:
+                                        string  += "+"
+                                    string    += "\\varepsilon_{%i%i%i}"  %(i,j,k)
+                                    string    += "\\pdv{\omega_{%i}}"     %(i)
+                                    string    += "{x_{%i}}"               %(l)
+                                    string    += "\\cdot"
+                                    string    += "\\pdv{}"
+                                    string    += "{x_{%i}}"               %(j)
+                                    string    += "\\left("
+                                    string    += "R_{%i%i}"               %(k,m)
+                                    string    += "S_{%i%i}"               %(m,n)
+                                    string    += "S_{%i%i}"               %(n,l)
+                                    string    += "\\right)\n"
+                                    count     += 1
+    string += "\t\\end{split}\n"
+    string += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Writing file                                                        #
+    #---------------------------------------------------------------------#
+    f = open(latex_path + "c6-2-enstrophy-production.tex", "w")
+    f.write(string)
+    f.close()
+    #---------------------------------------------------------------------#
+    # C7-1 term                                                           #
+    #---------------------------------------------------------------------#
+    for i in range(1,4):
+        crit    = False
+        string  = ""
+        string  += "\\begin{equation}\n"
+        string  += "\t\\begin{split}\n"
+        count   = 0
+        for j in range(1,4):
+            for k in range(1,4):
+                if i!=j and j!=k and i!=k:
+                    for l in range(1,4):
+                        for m in range(1,4):
+                            for n in range(1,4):
+                                for p in range(1,4):
+                                    if k!=m and m==n and n!=p and p!=l:
+                                        string  += "\t\t"
+                                        if count == 2:
+                                            string  += "\\\\ \n"
+                                            string += "&"
+                                            count   = 0
+                                        if crit is not False:
+                                            string  += ""
+                                            crit    = True
+                                        else:
+                                            string  += "+"
+                                        string    += "\\varepsilon_{%i%i%i}"  %(i,j,k)
+                                        string    += "\\pdv{\omega_{%i}}"     %(i)
+                                        string    += "{x_{%i}}"               %(l)
+                                        string    += "\\cdot"
+                                        string    += "\\pdv{}"
+                                        string    += "{x_{%i}}"               %(j)
+                                        string    += "\\left("
+                                        string    += "R_{%i%i}"               %(k,m)
+                                        string    += "S_{%i%i}"               %(m,n)
+                                        string    += "R_{%i%i}"               %(n,p)
+                                        string    += "R_{%i%i}"               %(p,l)
+                                        string    += "\\right)\n"
+                                        count     += 1
+        string += "\t\\end{split}\n"
+        string += "\\end{equation}\n"
+    #---------------------------------------------------------------------#
+    # Writing file                                                        #
+    #---------------------------------------------------------------------#
+    f = open(latex_path + "c7-1-enstrophy-production.tex", "w")
     f.write(string)
     f.close()
