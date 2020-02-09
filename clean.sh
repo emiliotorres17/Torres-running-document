@@ -1,3 +1,4 @@
+rm -fr *.pdf
 rm -fr *.aux
 rm -fr *.lof
 rm -fr *.lot

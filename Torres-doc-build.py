@@ -17,6 +17,7 @@ import os
 import sys
 from subprocess import call
 import time
+import datetime
 #=========================================================================#
 # Main                                                                    #
 #=========================================================================#
@@ -40,10 +41,22 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     # Running LaTeX                                                       #
     #---------------------------------------------------------------------#
-    latex_file  = "Torres-doc.tex"
-    call(["pdflatex", latex_file])
-    call(["pdflatex", latex_file])
-    call(["pdflatex", latex_file])
+    latex_file  = "Torres-doc"
+    call(["pdflatex", latex_file + ".tex"])
+    call(["pdflatex", latex_file + ".tex"])
+    call(["pdflatex", latex_file + ".tex"])
     call(["clear"])
+    #---------------------------------------------------------------------#
+    # Changing the file name                                              #
+    #---------------------------------------------------------------------#
+    call(["clear"]) 
+    now             = datetime.datetime.now()
+    year            = '{:02d}'.format(now.year)
+    month           = '{:02d}'.format(now.month)
+    day             = '{:02d}'.format(now.day)
+    day_month_year  = '{}_{}_{}'.format(year, month, day)
+    name            = "Torres_" + day_month_year + ".pdf"
+    call(['mv', latex_file + ".pdf", name])
+
     print("**** Successful LaTeX Run ****")
     time.sleep(1)

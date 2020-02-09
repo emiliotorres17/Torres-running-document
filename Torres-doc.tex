@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\newcommand{\pdftitle}{Torres-Running-Document}
+\input{preamble}
+%-------------------------------------------------------------------------%
+% Page setup                                                              %
+%-------------------------------------------------------------------------%
+\pagestyle{fancy}
+\fancyhead[L]{Running Document}
+\fancyhead[C]{}
+\fancyhead[R]{E. Torres}
+\renewcommand{\headrulewidth}{1.0pt}
+\fancyfoot[L]{\today}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\footrulewidth}{1.0pt}
+%-------------------------------------------------------------------------%
+% Document                                                                %
+%-------------------------------------------------------------------------%
+\begin{document}
+\input{latex-inputs/title}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\input{latex-inputs/SGS-enstrophy}
+\input{latex-inputs/SGS-representation}
+\input{latex-inputs/vorticity-derivation}
+%\includepdf[pages=-, scale=0.9, pagecommand={}]{latex-inputs/torres-notes-1-28-2020.pdf}
+
+
+
+\end{document}
