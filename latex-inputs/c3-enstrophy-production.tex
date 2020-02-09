@@ -1,77 +1,31 @@
 \begin{equation}
-	\begin{split}
-		 & \varepsilon_{ijk}\pdv{\omega}{x_{l}} \cdot\pdv{}{x_{j}}\left(R_{km}R_{ml}\right) =  \\ 
-		&\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{31}R_{11}\right)
-}		+{\color{red}\varepsilon_{123}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{32}R_{21}\right)
-}		+\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{33}R_{31}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{123}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{31}R_{12}\right)
-}		+\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{32}R_{22}\right)
-}		+\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{33}R_{32}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{123}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{31}R_{13}\right)
-}		+{\color{red}\varepsilon_{123}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{32}R_{23}\right)
-}		+\cancel{\varepsilon_{123}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{33}R_{33}\right)
-}\\ 
-		&+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{21}R_{11}\right)
-}		+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{22}R_{21}\right)
-}		+{\color{red}\varepsilon_{132}\pdv{\omega_{1}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{23}R_{31}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{132}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{21}R_{12}\right)
-}		+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{22}R_{22}\right)
-}		+{\color{red}\varepsilon_{132}\pdv{\omega_{1}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{23}R_{32}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{132}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{21}R_{13}\right)
-}		+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{22}R_{23}\right)
-}		+\cancel{\varepsilon_{132}\pdv{\omega_{1}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{23}R_{33}\right)
-}\\ 
-		&+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{31}R_{11}\right)
-}		+{\color{red}\varepsilon_{213}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{32}R_{21}\right)
-}		+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{33}R_{31}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{213}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{31}R_{12}\right)
-}		+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{32}R_{22}\right)
-}		+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{33}R_{32}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{213}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{31}R_{13}\right)
-}		+{\color{red}\varepsilon_{213}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{32}R_{23}\right)
-}		+\cancel{\varepsilon_{213}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{33}R_{33}\right)
-}\\ 
-		&+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{11}R_{11}\right)
-}		+{\color{red}\varepsilon_{231}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{12}R_{21}\right)
-}		+{\color{red}\varepsilon_{231}\pdv{\omega_{2}}{x_{1}}\cdot\pdv{}{x_{3}}\left(R_{13}R_{31}\right)
-}\\ 
-		&+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{11}R_{12}\right)
-}		+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{12}R_{22}\right)
-}		+{\color{red}\varepsilon_{231}\pdv{\omega_{2}}{x_{2}}\cdot\pdv{}{x_{3}}\left(R_{13}R_{32}\right)
-}\\ 
-		&+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{11}R_{13}\right)
-}		+{\color{red}\varepsilon_{231}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{12}R_{23}\right)
-}		+\cancel{\varepsilon_{231}\pdv{\omega_{2}}{x_{3}}\cdot\pdv{}{x_{3}}\left(R_{13}R_{33}\right)
-}\\ 
-		&+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{21}R_{11}\right)
-}		+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{22}R_{21}\right)
-}		+{\color{red}\varepsilon_{312}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{1}}\left(R_{23}R_{31}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{312}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{21}R_{12}\right)
-}		+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{22}R_{22}\right)
-}		+{\color{red}\varepsilon_{312}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{1}}\left(R_{23}R_{32}\right)
-}\\ 
-		&+{\color{red}\varepsilon_{312}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{21}R_{13}\right)
-}		+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{22}R_{23}\right)
-}		+\cancel{\varepsilon_{312}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{1}}\left(R_{23}R_{33}\right)
-}\\ 
-		&+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{11}R_{11}\right)
-}		+{\color{red}\varepsilon_{321}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{12}R_{21}\right)
-}		+{\color{red}\varepsilon_{321}\pdv{\omega_{3}}{x_{1}}\cdot\pdv{}{x_{2}}\left(R_{13}R_{31}\right)
-}\\ 
-		&+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{11}R_{12}\right)
-}		+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{12}R_{22}\right)
-}		+{\color{red}\varepsilon_{321}\pdv{\omega_{3}}{x_{2}}\cdot\pdv{}{x_{2}}\left(R_{13}R_{32}\right)
-}\\ 
-		&+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{11}R_{13}\right)
-}		+{\color{red}\varepsilon_{321}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{12}R_{23}\right)
-}		+\cancel{\varepsilon_{321}\pdv{\omega_{3}}{x_{3}}\cdot\pdv{}{x_{2}}\left(R_{13}R_{33}\right)
-}\\ 
+\colorboxed{red}{
+	\begin{split}  
+		\varepsilon_{ijk}\pdv{\widetilde{\omega}_{i}}{x_{l}} \cdot\pdv{}{x_{j}}R_{km}R_{ml} = & 
+		\pdv{\widetilde{\omega}_{1}}{x_{1}}\cdot\pdv{}{x_{2}}R_{23}R_{12}
+		+\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{}{x_{2}}R_{31}R_{12}\\
+		&-\pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{}{x_{2}}R_{31}R_{31}
+		-\pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{}{x_{2}}R_{23}R_{23}\\
+		&-\pdv{\widetilde{\omega}_{1}}{x_{1}}\cdot\pdv{}{x_{3}}R_{23}R_{31}
+		+\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{}{x_{3}}R_{12}R_{12}\\
+		&+\pdv{\widetilde{\omega}_{1}}{x_{2}}\cdot\pdv{}{x_{3}}R_{23}R_{23}
+		-\pdv{\widetilde{\omega}_{1}}{x_{3}}\cdot\pdv{}{x_{3}}R_{12}R_{31}\\
+		&-\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{}{x_{1}}R_{23}R_{12}
+		-\pdv{\widetilde{\omega}_{2}}{x_{2}}\cdot\pdv{}{x_{1}}R_{31}R_{12}\\
+		&+\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{}{x_{1}}R_{31}R_{31}
+		+\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{}{x_{1}}R_{23}R_{23}\\
+		&-\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{}{x_{3}}R_{12}R_{12}
+		-\pdv{\widetilde{\omega}_{2}}{x_{1}}\cdot\pdv{}{x_{3}}R_{31}R_{31}\\
+		&+\pdv{\widetilde{\omega}_{2}}{x_{2}}\cdot\pdv{}{x_{3}}R_{31}R_{23}
+		+\pdv{\widetilde{\omega}_{2}}{x_{3}}\cdot\pdv{}{x_{3}}R_{12}R_{23}\\
+		&+\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{}{x_{1}}R_{23}R_{31}
+		-\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{}{x_{1}}R_{12}R_{12}\\
+		&-\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{}{x_{1}}R_{23}R_{23}
+		+\pdv{\widetilde{\omega}_{3}}{x_{3}}\cdot\pdv{}{x_{1}}R_{12}R_{31}\\
+		&+\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{}{x_{2}}R_{12}R_{12}
+		+\pdv{\widetilde{\omega}_{3}}{x_{1}}\cdot\pdv{}{x_{2}}R_{31}R_{31}\\
+		&-\pdv{\widetilde{\omega}_{3}}{x_{2}}\cdot\pdv{}{x_{2}}R_{31}R_{23}
+		-\pdv{\widetilde{\omega}_{3}}{x_{3}}\cdot\pdv{}{x_{2}}R_{12}R_{23}\\
 	\end{split}
+}
 \end{equation}
