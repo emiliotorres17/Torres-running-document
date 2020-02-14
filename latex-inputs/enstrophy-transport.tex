@@ -1,0 +1,74 @@
+\newcommand{\pienst}{\Pi_{\Omega}}
+\newcommand{\penst}{P_{\Omega}}
+\newcommand{\aenst}{A_{\Omega}}
+\newcommand{\benst}{B_{\Omega}}
+\newcommand{\denst}{D_{\Omega}}
+\newcommand{\matderv}[1]{\frac{D#1}{Dt}}
+
+\subsection{Term-by-Term Enstrophy Transport Evaluation}
+From the enstrophy transport equation
+\begin{equation}
+    \underbrace{\pdv{\Omega}{t} + \widetilde{\mathbf{u}} \cdot \grad{\Omega}}_{\equiv \matderv{\Omega}} =
+        \underbrace{\widetilde{\mathbf{\omega}} \cdot \widetilde{\mathbf{S}} \cdot \widetilde{\mathbf{\omega}}}_{\equiv A_{\Omega}}
+        \underbrace{+ \nu \div \left(\grad{\Omega}\right)}_{\equiv B_{\Omega}}
+        \underbrace{- \nu \grad{\widetilde{\omega}} : \grad{\widetilde{\omega}}}_{\equiv D_{\Omega}}
+        \underbrace{- \div\left(\widetilde{\mathbf{\omega}} \mathbf{\Psi}\right)}_{\equiv \Pi_{\Omega}} 
+        \underbrace{+ \mathbf{\Psi} \grad{\widetilde{\omega}}}_{\equiv P_{\Omega}} 
+        \label{eq:enstrophy-transport}
+\end{equation}
+we can define the following budget terms
+
+
+\begin{subequations}
+    \begin{align}
+        A_{\Omega} \equiv &
+            \widetilde{\mathbf{\omega}} 
+            \cdot \widetilde{\mathbf{S}} 
+            \cdot \widetilde{\mathbf{\omega}}   \\
+        B_{\Omega} \equiv &
+            \nu \div{\grad{\Omega}} \\
+        D_{\Omega} \equiv &
+            - \nu \grad{\widetilde{\omega}} : \grad{\widetilde{\omega}} \\
+        \Pi_{\Omega} \equiv &
+            -\div\left(\widetilde{\mathbf{\omega}} \mathbf{\Psi}\right) \\
+        P_{\Omega} \equiv &
+            \mathbf{\Psi} \grad{\widetilde{\omega}}
+    \end{align}
+\end{subequations}
+
+On the right side of Eq.~\ref{eq:enstrophy-transport}
+\begin{enumerate}
+    \item   
+        Term $A_{\Omega}$ accounts for the enstrophy production due to the vortex stretching in the
+        resolved field. Since the vorticity tries align itself  with the most extensional strain
+        rate component, we expect this term to largely positive and thus adding to the flows total
+        enstrophy.
+        
+    \item
+        Term $\benst$ accounts for the redistribution of enstrophy within in the resolved
+        scales. Since $\benst$ can be written in ``flux form'' $\div{(\;)}$, meaning it appears
+        as a divergence of the quantity in parenthesis, and thus cannot correspond to the net
+        addition or removal of enstrophy $\Omega$ from the flow as a whole. Instead, it only acts
+        to redistribute the enstrophy within the flow; any increase in $\Omega$ that it produces at
+        one location must be offset by a corresponding decrease in $\Omega$ at another point.   
+
+    \item
+        Term $\denst$ accounts for the resolved-scale dissipation of enstrophy. Since 
+        $\grad{\widetilde{\omega}}: \grad{\widetilde{\omega}}$ is a square term, $\denst$ is always
+        non-positive, thus everywhere in the flow it always acts to remove enstrophy form the
+        resolved scales.
+       
+    \item
+        Term $\pienst$ accounts for the redistribution of the enstrophy with in the resolved scales
+        by the subgrid stress; it analogous to term $\benst$ but accounts for the redistribution by
+        the subgrid stresses rather than by the viscous stresses.
+
+    \item
+        Term $\penst$ accounts for the subgrid production of enstrophy, namely the enstrophy
+        exchange between the resolved and subgrid scales. This term can be locally positive or
+        negative; whenever $\penst < 0 $ there is enstrophy transfer from the resolved scales into
+        the subgrid scales (''forward scatter'' of enstrophy), and whenever $\penst >0$ there is an
+        enstrophy transfer from the subgrid scales into the resolved scales (``backscatter'' of
+        enstrophy).
+        
+\end{enumerate}
