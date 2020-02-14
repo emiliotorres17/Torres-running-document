@@ -6,33 +6,32 @@
 \newcommand{\matderv}[1]{\frac{D#1}{Dt}}
 
 \subsection{Term-by-Term Enstrophy Transport Evaluation}
-From the enstrophy transport equation
+To understand the blowup and healing process of the energetics it makes sense to examine the
+transport equation for the filtered enstrophy. We start by substituting in
+Eqs.~\ref{eq:SGS-enstrophy-production} \& \ref{eq:SGS-enstrophy-transport} into
+Eq.~\ref{eq:enstrophy-vector} to get the following in index notation
 \begin{equation}
-    \underbrace{\pdv{\Omega}{t} + \widetilde{\mathbf{u}} \cdot \grad{\Omega}}_{\equiv \matderv{\Omega}} =
-        \underbrace{\widetilde{\mathbf{\omega}} \cdot \widetilde{\mathbf{S}} \cdot \widetilde{\mathbf{\omega}}}_{\equiv A_{\Omega}}
-        \underbrace{+ \nu \div \left(\grad{\Omega}\right)}_{\equiv B_{\Omega}}
-        \underbrace{- \nu \grad{\widetilde{\omega}} : \grad{\widetilde{\omega}}}_{\equiv D_{\Omega}}
-        \underbrace{- \div\left(\widetilde{\mathbf{\omega}} \mathbf{\Psi}\right)}_{\equiv \Pi_{\Omega}} 
-        \underbrace{+ \mathbf{\Psi} \grad{\widetilde{\omega}}}_{\equiv P_{\Omega}} 
+    \underbrace{\pdv{\Omega}{t} + \widetilde{u}_{j} \pdv{\Omega}{x_{i}}}_{\equiv \matderv{\Omega}} =
+        \underbrace{\widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}}_{\equiv A_{\Omega}}
+        \underbrace{+ \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)}_{\equiv B_{\Omega}}
+        \underbrace{- \nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv D_{\Omega}}
+        \underbrace{- \pdv{}{x_{j}} \left(\widetilde{\omega} \Psi_{il}\right)}_{\equiv \Pi_{\Omega}} 
+        \underbrace{+ \Psi_{il} \pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv P_{\Omega}} 
         \label{eq:enstrophy-transport}
 \end{equation}
-we can define the following budget terms
-
-
+where we can define the following budget terms as
 \begin{subequations}
     \begin{align}
-        A_{\Omega} \equiv &
-            \widetilde{\mathbf{\omega}} 
-            \cdot \widetilde{\mathbf{S}} 
-            \cdot \widetilde{\mathbf{\omega}}   \\
-        B_{\Omega} \equiv &
-            \nu \div{\grad{\Omega}} \\
-        D_{\Omega} \equiv &
-            - \nu \grad{\widetilde{\omega}} : \grad{\widetilde{\omega}} \\
-        \Pi_{\Omega} \equiv &
-            -\div\left(\widetilde{\mathbf{\omega}} \mathbf{\Psi}\right) \\
-        P_{\Omega} \equiv &
-            \mathbf{\Psi} \grad{\widetilde{\omega}}
+        A_{\Omega} \equiv \; &
+            \widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}\\
+        B_{\Omega} \equiv \; &
+            \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)\\
+        D_{\Omega} \equiv \; &
+            -\nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}\\
+        \Pi_{\Omega} \equiv \; &
+            -\pdv{}{x_{j}} \left(\widetilde{\omega} \Psi_{il}\right)\\
+        P_{\Omega} \equiv \; &
+            \Psi_{il} \pdv{\widetilde{\omega}_{i}}{x_{j}}
     \end{align}
 \end{subequations}
 
@@ -45,18 +44,19 @@ On the right side of Eq.~\ref{eq:enstrophy-transport}
         enstrophy.
         
     \item
-        Term $\benst$ accounts for the redistribution of enstrophy within in the resolved
-        scales. Since $\benst$ can be written in ``flux form'' $\div{(\;)}$, meaning it appears
-        as a divergence of the quantity in parenthesis, and thus cannot correspond to the net
-        addition or removal of enstrophy $\Omega$ from the flow as a whole. Instead, it only acts
-        to redistribute the enstrophy within the flow; any increase in $\Omega$ that it produces at
-        one location must be offset by a corresponding decrease in $\Omega$ at another point.   
+        Term $\benst$ accounts for the redistribution of enstrophy within in the resolved scales.
+        Since $\benst$ can be written in ``flux form'' $\div \equiv \pdv*{(\;)}{x_{j}}$, meaning it
+        appears as a divergence of the quantity in parenthesis, and thus cannot correspond to the
+        net addition or removal of enstrophy $\Omega$ from the flow as a whole. Instead, it only
+        acts to redistribute the enstrophy within the flow; any increase in $\Omega$ that it
+        produces at one location must be offset by a corresponding decrease in $\Omega$ at another
+        point.   
 
     \item
-        Term $\denst$ accounts for the resolved-scale dissipation of enstrophy. Since 
-        $\grad{\widetilde{\omega}}: \grad{\widetilde{\omega}}$ is a square term, $\denst$ is always
-        non-positive, thus everywhere in the flow it always acts to remove enstrophy form the
-        resolved scales.
+        Term $\denst$ accounts for the resolved-scale dissipation of enstrophy. Since
+        $\left(\pdv*{\widetilde{\omega}_{i}}{x_{j}} \pdv*{\widetilde{\omega}_{i}}{x_{j}}\right)$ is
+        a square term, $\denst$ is always non-positive, thus everywhere in the flow it always acts
+        to remove enstrophy form the resolved scales.
        
     \item
         Term $\pienst$ accounts for the redistribution of the enstrophy with in the resolved scales
