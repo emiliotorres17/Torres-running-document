@@ -105,8 +105,8 @@ arranged to get
     \begin{split}
         - \tilde{\omega}_{i}  \pdv{}{x_{l}} \varepsilon_{ijk} \pdv{}{x_{j}} \tau_{kl}  = &
             -\tilde{\omega}_{i} \pdv{\Psi_{il}}{x_{l}} \\
-            & = - \underbrace{\pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)}_{\equiv \text{Transport}}
-            + \underbrace{\Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}}_{\equiv \text{Production}}
+            & = - \underbrace{\pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)}_{\equiv \text{Transport, $\Pi_{\Omega}$}}
+            + \underbrace{\Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}}_{\equiv \text{Production, $P_{\Omega}$}}
     \end{split}
     \label{eq:trans-enstrophy}
 \end{equation}
@@ -114,7 +114,7 @@ Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that that the transport
 of enstrophy from the subgrid stress is due to 
 \begin{equation}
     \colorboxed{red}{
-        - \pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)
+        \Pi_{\Omega} \equiv - \pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)
     }
     \label{eq:SGS-enstrophy-transport}
 \end{equation}
