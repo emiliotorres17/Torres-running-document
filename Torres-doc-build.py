@@ -43,9 +43,17 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     latex_file  = "Torres-doc"
     call(["pdflatex", latex_file + ".tex"])
-    call(["pdflatex", latex_file + ".tex"])
+    call(["clear"])
+    print("**** Finished run 1 ****")
+    time.sleep(2)
     call(["pdflatex", latex_file + ".tex"])
     call(["clear"])
+    print("**** Finished run 2 ****")
+    time.sleep(2)
+    call(["pdflatex", latex_file + ".tex"])
+    call(["clear"])
+    print("**** Finished run 3 ****")
+    time.sleep(2)
     #---------------------------------------------------------------------#
     # Changing the file name                                              #
     #---------------------------------------------------------------------#

@@ -59,7 +59,8 @@ identities
     \end{equation}
 \end{subequations}
 
-Next we can multiply Eq.~\ref{eq:filtered-vorticity} to obtain the filtered
+Next we can multiply Eq.~\ref{eq:filtered-vorticity} by
+$\widetilde{\mathbf{\omega}}$ to obtain the filtered
 enstrophy, $\Omega \equiv \frac{1}{2} \filtwvec \filtwvec$, transport
 equation, namely,
 \begin{subequations}
@@ -70,6 +71,7 @@ equation, namely,
             - \curl \div \mathbf{\tau}
             \bigg)
     \end{equation}
+    \text{which gives}
     \begin{equation}
         \pdv{\Omega}{t} + \filtuvec \cdot \grad \Omega = 
             \filtwvec \cdot \filtsvec \cdot \filtwvec + \nu \laplacian{\Omega}
@@ -91,6 +93,16 @@ We begin the evaluation by expressing the subgrid stress in index notation,
         - \varepsilon_{ijk} \tilde{\omega}_{i} 
         \pdv{}{x_{j}} \pdv{}{x_{l}} \tau_{kl}
 \end{equation}
+where
+\begin{equation}
+    \varepsilon_{ijk} \equiv 
+    \begin{cases}
+        1,      &   \text{if $ijk = 123, 312, 231$}     \\
+        -1,     &   \text{if $ijk = 321, 132, 213$}     \\
+        0,      &   \text{if $i = j$, $i=k$, or $j=k$}  \\
+    \end{cases}
+    \label{eq:levi-civitas}
+\end{equation}
 Interchanging the linear derivative operators and moving the Levi-Civita
 inside the first derivative gives
 \begin{equation}
@@ -99,7 +111,7 @@ inside the first derivative gives
         - \tilde{\omega}_{i}  \pdv{}{x_{l}} \underbrace{\varepsilon_{ijk} \pdv{}{x_{j}}
         \tau_{kl}}_{\equiv \curl \mathbf{\tau}}
 \end{equation}
-Substituting in $\Psi_{il}$ for $\curl \mathbf{\tau}$ the following can be 
+Substituting  $\Psi_{il}$ for $\curl \mathbf{\tau}$ the following can be 
 arranged to get 
 \begin{equation}
     \begin{split}
@@ -110,7 +122,7 @@ arranged to get
     \end{split}
     \label{eq:trans-enstrophy}
 \end{equation}
-Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that that the transport
+Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that the transport
 of enstrophy from the subgrid stress is due to 
 \begin{equation}
     \colorboxed{red}{
