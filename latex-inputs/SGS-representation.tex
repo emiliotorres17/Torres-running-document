@@ -2,7 +2,83 @@
 \newcommand{\svec}{\mathbf{S}}
 \newcommand{\rvec}{\mathbf{R}}
 %\newpage
-\section{SGS Representation}
+\section{Kinetic energy transport}
+Staring with the filtered momentum transport equation
+
+\begin{subequations}
+    \begin{equation}
+        \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
+            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+            + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
+            - \pdv{}{x_{j}}\big( \underbrace{\widetilde{u_{i} u_{j}} - \widetilde{u}_{i} \widetilde{u}_{j}}_{\equiv \tau_{ij}} \big)
+    \end{equation}
+    \begin{equation}
+        \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
+            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+            + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
+            - \pdv{\tau_{ij}}{x_{j}}
+    \end{equation}
+    \label{eq:ns-filt}
+\end{subequations}
+
+The kinetic energy $k\equiv \frac{1}{2} \widetilde{u}_{i} \widetilde{u}_{i}$
+can be easily derived by multiplying Eq.~(\ref{eq:ns-filt}) by $\widetilde{u}_1$
+\begin{equation}
+    \widetilde{u}_{i} \bigg(
+    \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
+        -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+        + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
+        - \pdv{\tau_{ij}}{x_{j}}
+        \bigg)
+\end{equation}
+and evaluating each term by term we get the following
+\begin{subequations}
+    \begin{equation}
+        \widetilde{u}_{i} \pdv{\widetilde{u}_{i}}{t} =
+            \pdv{}{t} \bigg(\frac{1}{2}\widetilde{u}_{i} \widetilde{u}_{i}\bigg) =
+            \pdv{k}{t}
+    \end{equation}
+    \begin{equation}
+        \widetilde{u}_{i} \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}}  =
+        \widetilde{u}_{j} \pdv{}{x_{j}} \bigg(\frac{1}{2} \widetilde{u}_{i}\widetilde{u}_{i} \bigg) = 
+        \widetilde{u}_{j} \pdv{k}{x_{j}}
+    \end{equation}
+    \begin{equation}
+         - \frac{1}{\rho} \widetilde{u}_{j} \pdv{\widetilde{p}}{x_{j}} = 
+           -\frac{1}{\rho} \pdv{}{x_{j}} \bigg(\widetilde{p} \widetilde{u}_{j}\bigg) 
+    \end{equation}
+    \begin{equation}
+        \nu \widetilde{u}_{i}  \pdv{}{x_{j}} \left( \pdv{\widetilde{u}_{i}}{x_{j}} \right) = 
+            \nu \Bigg[ \pdv{}{x_{j}} \bigg( \widetilde{u}_{i} \pdv{\widetilde{u}_{i}}{x_{j}}\bigg) -
+                \pdv {\widetilde{u}_{i}}{x_{j}} \pdv {\widetilde{u}_{i}}{x_{j}} \bigg] = 
+            2\nu \Bigg[ \pdv{}{x_{j}} \bigg( \widetilde{u}_{i} S_{ij}\bigg) -
+                S_{ij} S_{ij} \bigg]
+    \end{equation}
+    \begin{equation}
+        -\widetilde{u}_{i} \pdv{\tau_{ij}}{x_{j}} = 
+          - \pdv{}{x_{j}} \left(u_{i} \tau_{ij}\right) + \tau_{ij} \pdv{\widetilde{u}_{i}}{x_{j}} =
+          - \pdv{}{x_{j}} \left(u_{i} \tau_{ij}\right) + \tau_{ij} S_{ij} 
+    \end{equation}
+\end{subequations}
+
+Thus 
+
+\begin{equation}
+    \colorboxed{red}{
+        \pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} =
+            \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) +
+            2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) -
+            2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} -
+            \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) + 
+            \tau_{ij} S_{ij}
+        }
+\end{equation}
+
+
+
+
+
+\subsection{SGS Representation}
 From the ``board notes'' the kinetic energy production term in the kinetic
 energy transport equation can be defined as
 \begin{equation}

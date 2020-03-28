@@ -1,3 +1,9 @@
+\newcommand{\pienst}{\Pi_{\Omega}}
+\newcommand{\penst}{P_{\Omega}}
+\newcommand{\aenst}{A_{\Omega}}
+\newcommand{\benst}{B_{\Omega}}
+\newcommand{\denst}{D_{\Omega}}
+\newcommand{\matderv}[1]{\frac{D#1}{Dt}}
 \newcommand{\bfvec}[1]{%
     \mathbf{#1}
     }
@@ -139,6 +145,86 @@ while the production of enstrophy from SGS $P_{\Omega}$ is given by
             \label{eq:SGS-enstrophy-production}
     }
 \end{equation}
+
+To understand the blowup and healing process of the energetics it makes sense to examine the
+transport equation for the filtered enstrophy. We start by substituting in
+Eqs.~\ref{eq:SGS-enstrophy-production} \& \ref{eq:SGS-enstrophy-transport} into
+Eq.~\ref{eq:enstrophy-vector} to get the following in index notation
+\begin{subequations}
+    \begin{equation}
+        \underbrace{\pdv{\Omega}{t} + \widetilde{u}_{j} \pdv{\Omega}{x_{i}}}_{\equiv \matderv{\Omega}} =
+            \underbrace{\widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}}_{\equiv A_{\Omega}}
+            \underbrace{+ \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)}_{\equiv B_{\Omega}}
+            \underbrace{- \nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv D_{\Omega}}
+            \underbrace{- \pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \Psi_{ij}\right)}_{\equiv \Pi_{\Omega}} 
+            \underbrace{+ \Psi_{ij} \pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv P_{\Omega}} 
+        \label{eq:enstrophy-transport-index}
+    \end{equation}
+    \text{and in vector notation as}
+    \begin{equation}
+        \underbrace{\pdv{\Omega}{t} + \mathbf{\widetilde{u}} \cdot \grad \Omega  }_{\equiv \matderv{\Omega}} =
+            \underbrace{\mathbf{\widetilde{\omega}} \cdot \mathbf{\widetilde{S}} \cdot \mathbf{\widetilde{\omega}} }_{\equiv A_{\Omega}}
+            \underbrace{+ \nu \div \left( \grad \Omega \right)}_{\equiv B_{\Omega}}
+            \underbrace{- \nu \grad \mathbf{\widetilde{\omega}} : \grad \mathbf{\widetilde{\omega}}}_{\equiv D_{\Omega}}
+            \underbrace{- \div \left( \mathbf{\widetilde{\omega}} \cdot \mathbf{\Psi} \right)  }_{\equiv \Pi_{\Omega}} 
+            \underbrace{+ \mathbf{\Psi} : \grad \mathbf{\widetilde{\omega}} }_{\equiv P_{\Omega}} 
+            \label{eq:enstrophy-transport-vec}
+    \end{equation}
+    \label{eq:enstrophy-transport}
+\end{subequations}
+where we can define the following budget terms as
+\begin{subequations}
+    \begin{align}
+        A_{\Omega} \equiv \; &
+            \widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}\\
+        B_{\Omega} \equiv \; &
+            \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)\\
+        D_{\Omega} \equiv \; &
+            -\nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}\\
+        \Pi_{\Omega} \equiv \; &
+            -\pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \Psi_{ij}\right)\\
+        P_{\Omega} \equiv \; &
+            \Psi_{ij} \pdv{\widetilde{\omega}_{i}}{x_{j}}
+    \end{align}
+\end{subequations}
+
+On the right side of Eq.~\ref{eq:enstrophy-transport}
+\begin{enumerate}
+    \item   
+        Term $A_{\Omega}$ accounts for the enstrophy production due to the vortex stretching in the
+        resolved field. Since the vorticity tries align itself  with the most extensional strain
+        rate component, we expect this term to largely positive and thus adding to the flows total
+        enstrophy.
+        
+    \item
+        Term $\benst$ accounts for the redistribution of enstrophy within in the resolved scales.
+        Since $\benst$ can be written in ``flux form'' $\div \equiv \pdv*{(\;)}{x_{j}}$, meaning it
+        appears as a divergence of the quantity in parenthesis, and thus cannot correspond to the
+        net addition or removal of enstrophy $\Omega$ from the flow as a whole. Instead, it only
+        acts to redistribute the enstrophy within the flow; any increase in $\Omega$ that it
+        produces at one location must be offset by a corresponding decrease in $\Omega$ at another
+        point.   
+
+    \item
+        Term $\denst$ accounts for the resolved-scale dissipation of enstrophy. Since
+        $\left(\pdv*{\widetilde{\omega}_{i}}{x_{j}} \pdv*{\widetilde{\omega}_{i}}{x_{j}}\right)$ is
+        a square term, $\denst$ is always non-positive, thus everywhere in the flow it always acts
+        to remove enstrophy form the resolved scales.
+       
+    \item
+        Term $\pienst$ accounts for the redistribution of the enstrophy with in the resolved scales
+        by the subgrid stress; it analogous to term $\benst$ but accounts for the redistribution by
+        the subgrid stresses rather than by the viscous stresses.
+
+    \item
+        Term $\penst$ accounts for the subgrid production of enstrophy, namely the enstrophy
+        exchange between the resolved and subgrid scales. This term can be locally positive or
+        negative; whenever $\penst < 0 $ there is enstrophy transfer from the resolved scales into
+        the subgrid scales (''forward scatter'' of enstrophy), and whenever $\penst >0$ there is an
+        enstrophy transfer from the subgrid scales into the resolved scales (``backscatter'' of
+        enstrophy).
+\end{enumerate}
+
 Similarly to the above analysis of the kinetic production, we will next 
 systematically evaluate the enstrophy production using the SGS given in
 Eq.~\ref{eq:SGS-tf-8} 
