@@ -127,7 +127,7 @@ if __name__ == "__main__":
     call(["clear"])
     sep         = os.sep
     pwd         = os.getcwd()
-    latex_path  = pwd + "%c..%clatex-inputs%c"          %(sep,sep,sep)
+    latex_path  = pwd + "%c..%clatex-inputs%censtrophy-production%c"          %(sep, sep,sep,sep)
     #---------------------------------------------------------------------#
     # C1 term                                                             #
     #---------------------------------------------------------------------#

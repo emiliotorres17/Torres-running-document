@@ -32,12 +32,14 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------#
     # Running Python                                                      #
     #---------------------------------------------------------------------#
-    os.chdir(py_path)
-    pyfile  = "enstrophy-production-2.py"
-    call(["python3", pyfile])
-    print("**** Successful Python run ****")
-    time.sleep(3)
-    os.chdir(pwd)
+    python_flag = False
+    if python_flag is True:
+        os.chdir(py_path)
+        pyfile  = "enstrophy-production-2.py"
+        call(["python3", pyfile])
+        print("**** Successful Python run ****")
+        time.sleep(3)
+        os.chdir(pwd)
     #---------------------------------------------------------------------#
     # Running LaTeX                                                       #
     #---------------------------------------------------------------------#
