@@ -1,0 +1,76 @@
+\newcommand{\vort}{\widetilde{\omega}}
+\newcommand{\enst}{\Omega}
+\section{Subgrid Stress Enstrophy}
+Starting with the enstrophy transport equation
+\begin{equation}
+    \pdv{\enst}{t} + \widetilde{u}_{j} \pdv{\enst}{x_{j}} =
+        \vort_{i} S_{i} \vort_{j} + \nu \pdv{\enst}{x_{j}}{x_{j}} -
+        \nu \pdv{\vort_{i}}{x_{j}}  \pdv{\vort_{i}}{x_{j}} -
+        \varepsilon_{ijk} \vort_{i} \pdv{\tau_{kl}}{x_{j}}{x_{l}}
+\end{equation}
+
+Examining the subgrid stress and expanding and simplifying the indices
+gives,
+\begin{equation}
+    \begin{split}
+        - \varepsilon_{ijk} \vort_{i} \pdv{\tau_{kl}}{x_{j} x_{l}} = & 
+                -\varepsilon_{123} \vort_{1} \pdv{\tau_{31}}{x_{2}}{x_{1}}
+                -\varepsilon_{123} \vort_{1} \pdv{\tau_{32}}{x_{2}}{x_{2}}
+                -\varepsilon_{123} \vort_{1} \pdv{\tau_{33}}{x_{2}}{x_{3}}
+                -\varepsilon_{132} \vort_{1} \pdv{\tau_{21}}{x_{3}}{x_{1}}\\ 
+            &   -\varepsilon_{132} \vort_{1} \pdv{\tau_{22}}{x_{3}}{x_{2}} 
+                -\varepsilon_{132} \vort_{1} \pdv{\tau_{23}}{x_{3}}{x_{3}} 
+                -\varepsilon_{213} \vort_{2} \pdv{\tau_{31}}{x_{1}}{x_{1}} 
+                -\varepsilon_{213} \vort_{2} \pdv{\tau_{32}}{x_{1}}{x_{2}}\\ 
+            &   -\varepsilon_{213} \vort_{2} \pdv{\tau_{33}}{x_{1}}{x_{3}} 
+                -\varepsilon_{231} \vort_{2} \pdv{\tau_{11}}{x_{3}}{x_{1}}
+                -\varepsilon_{231} \vort_{2} \pdv{\tau_{12}}{x_{3}}{x_{2}}
+                -\varepsilon_{231} \vort_{2} \pdv{\tau_{13}}{x_{3}}{x_{3}}\\
+            &   -\varepsilon_{312} \vort_{3} \pdv{\tau_{21}}{x_{1}}{x_{1}}
+                -\varepsilon_{312} \vort_{3} \pdv{\tau_{22}}{x_{1}}{x_{2}}
+                -\varepsilon_{312} \vort_{3} \pdv{\tau_{23}}{x_{1}}{x_{3}}
+                -\varepsilon_{321} \vort_{3} \pdv{\tau_{11}}{x_{2}}{x_{1}}\\
+            &   -\varepsilon_{321} \vort_{3} \pdv{\tau_{12}}{x_{2}}{x_{2}}
+                -\varepsilon_{321} \vort_{3} \pdv{\tau_{13}}{x_{2}}{x_{3}}
+    \end{split}
+\end{equation}
+Applying the definition of the Levi-Civita tensor, namely,
+\begin{equation}
+    \varepsilon \equiv 
+    \begin{cases}
+        1,      &   \text{if $ijk = 123, 312, 231$}     \\
+        -1,     &   \text{if $ijk = 321, 132, 213$}     \\
+        0,      &   \text{if $i = j$, $i=k$, or $j=k$}  \\
+    \end{cases}
+    \label{eq:levi-civitas}
+\end{equation}
+we can express the subgrid stress as
+\begin{equation}
+    \colorboxed{red}{
+    \begin{split}
+        - \varepsilon_{ijk} \vort_{i} \pdv{\tau_{kl}}{x_{j} x_{l}} = & 
+                -\vort_{1} \pdv{\tau_{31}}{x_{2}}{x_{1}}
+                -\vort_{1} \pdv{\tau_{32}}{x_{2}}{x_{2}}
+                -\vort_{1} \pdv{\tau_{33}}{x_{2}}{x_{3}}
+                +\vort_{1} \pdv{\tau_{21}}{x_{3}}{x_{1}}\\ 
+            &   +\vort_{1} \pdv{\tau_{22}}{x_{3}}{x_{2}} 
+                +\vort_{1} \pdv{\tau_{23}}{x_{3}}{x_{3}} 
+                +\vort_{2} \pdv{\tau_{31}}{x_{1}}{x_{1}} 
+                +\vort_{2} \pdv{\tau_{32}}{x_{1}}{x_{2}}\\ 
+            &   +\vort_{2} \pdv{\tau_{33}}{x_{1}}{x_{3}} 
+                +\vort_{2} \pdv{\tau_{11}}{x_{3}}{x_{1}}
+                +\vort_{2} \pdv{\tau_{12}}{x_{3}}{x_{2}}
+                +\vort_{2} \pdv{\tau_{13}}{x_{3}}{x_{3}}\\
+            &   -\vort_{3} \pdv{\tau_{21}}{x_{1}}{x_{1}}
+                -\vort_{3} \pdv{\tau_{22}}{x_{1}}{x_{2}}
+                -\vort_{3} \pdv{\tau_{23}}{x_{1}}{x_{3}}
+                -\vort_{3} \pdv{\tau_{11}}{x_{2}}{x_{1}}\\
+            &   -\vort_{3} \pdv{\tau_{12}}{x_{2}}{x_{2}}
+                -\vort_{3} \pdv{\tau_{13}}{x_{2}}{x_{3}}
+    \end{split}
+    }
+\end{equation}
+%-------------------------------------------------------------------------%
+% Enstrophy production                                                    %
+%-------------------------------------------------------------------------%
+%\input{latex-inputs/c1-enstrophy-production-2}
