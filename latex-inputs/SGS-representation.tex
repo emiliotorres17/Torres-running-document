@@ -8,13 +8,13 @@ Staring with the filtered momentum transport equation
 \begin{subequations}
     \begin{equation}
         \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
-            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{i}} 
             + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
             - \pdv{}{x_{j}}\big( \underbrace{\widetilde{u_{i} u_{j}} - \widetilde{u}_{i} \widetilde{u}_{j}}_{\equiv \tau_{ij}} \big)
     \end{equation}
     \begin{equation}
         \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
-            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+            -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{i}} 
             + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
             - \pdv{\tau_{ij}}{x_{j}}
     \end{equation}
@@ -22,11 +22,11 @@ Staring with the filtered momentum transport equation
 \end{subequations}
 
 The kinetic energy $k\equiv \frac{1}{2} \widetilde{u}_{i} \widetilde{u}_{i}$
-can be easily derived by multiplying Eq.~(\ref{eq:ns-filt}) by $\widetilde{u}_1$
+can be easily derived by multiplying Eq.~(\ref{eq:ns-filt}) by $\widetilde{u}_{i}$
 \begin{equation}
     \widetilde{u}_{i} \bigg(
     \pdv{\widetilde{u}_{i}}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} = 
-        -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{j}} 
+        -\frac{1}{\rho} \pdv{\widetilde{p}}{x_{i}} 
         + \nu \pdv{\widetilde{u}_{i}}{x_{j}}{x_{j}}
         - \pdv{\tau_{ij}}{x_{j}}
         \bigg)
@@ -44,36 +44,54 @@ and evaluating each term by term we get the following
         \widetilde{u}_{j} \pdv{k}{x_{j}}
     \end{equation}
     \begin{equation}
-         - \frac{1}{\rho} \widetilde{u}_{j} \pdv{\widetilde{p}}{x_{j}} = 
-           -\frac{1}{\rho} \pdv{}{x_{j}} \bigg(\widetilde{p} \widetilde{u}_{j}\bigg) 
+         - \frac{1}{\rho} \widetilde{u}_{i} \pdv{\widetilde{p}}{x_{i}} = 
+           -\frac{1}{\rho} \pdv{}{x_{i}} \bigg(\widetilde{p} \widetilde{u}_{i}\bigg) 
     \end{equation}
     \begin{equation}
         \nu \widetilde{u}_{i}  \pdv{}{x_{j}} \left( \pdv{\widetilde{u}_{i}}{x_{j}} \right) = 
             \nu \Bigg[ \pdv{}{x_{j}} \bigg( \widetilde{u}_{i} \pdv{\widetilde{u}_{i}}{x_{j}}\bigg) -
                 \pdv {\widetilde{u}_{i}}{x_{j}} \pdv {\widetilde{u}_{i}}{x_{j}} \bigg] = 
-            2\nu \Bigg[ \pdv{}{x_{j}} \bigg( \widetilde{u}_{i} S_{ij}\bigg) -
-                S_{ij} S_{ij} \bigg]
+            2\nu \Bigg[ \pdv{}{x_{j}} \bigg( \widetilde{u}_{i} \widetilde{S}_{ij}\bigg) -
+                \widetilde{S}_{ij} \widetilde{S}_{ij} \bigg]
     \end{equation}
     \begin{equation}
         -\widetilde{u}_{i} \pdv{\tau_{ij}}{x_{j}} = 
-          - \pdv{}{x_{j}} \left(u_{i} \tau_{ij}\right) + \tau_{ij} \pdv{\widetilde{u}_{i}}{x_{j}} =
-          - \pdv{}{x_{j}} \left(u_{i} \tau_{ij}\right) + \tau_{ij} S_{ij} 
+          - \pdv{}{x_{j}} \left(\widetilde{u}_{i} \tau_{ij}\right) + \tau_{ij} \pdv{\widetilde{u}_{i}}{x_{j}} =
+          - \pdv{}{x_{j}} \left(\widetilde{u}_{i} \tau_{ij}\right) + \tau_{ij} \widetilde{S}_{ij} 
     \end{equation}
 \end{subequations}
 
-Thus 
+Thus we can express the transport of kinetic energy in index notation as 
 
 \begin{equation}
     \colorboxed{red}{
-        \pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{u}_{i}}{x_{j}} =
-            \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) +
-            2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) -
-            2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} -
-            \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) + 
-            \tau_{ij} S_{ij}
+        \underbrace{ \pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{k}}{x_{j}} }_{\frac{Dk}{Dt}} =
+            \underbrace{ - \frac{1}{\rho} \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) }_{\equiv A}
+            \underbrace{ + 2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) }_{\equiv B} 
+            \underbrace{ - 2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} }_{\equiv D}
+            \underbrace{ - \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) }_{\equiv C}
+            \underbrace{ + \tau_{ij} \widetilde{S}_{ij}}_{\equiv P}
+        }
+\end{equation}
+ 
+ and in vector notation as
+
+ \newcommand{\vectil}[1]{\mathbf{\widetilde{#1}}}
+
+\begin{equation}
+    \colorboxed{red}{
+        \underbrace{ \pdv{k}{t} + \vectil{u} \cdot \grad{k} }_{\frac{Dk}{Dt}} = 
+            \underbrace{ - \frac{1}{\rho} \div \left(\widetilde{p} \vectil{u} \right) }_{\equiv A} 
+            \underbrace{ + 2 \nu \div \left( \vectil{u} \cdot \vectil{S} \right) }_{\equiv B}
+            \underbrace{ - 2 \nu \vectil{S}:\vectil{S} }_{\equiv D}
+            \underbrace{ - \div \left( \vectil{u} \cdot \mathbf{\tau} \right) }_{\equiv C}
+            \underbrace{ + \mathbf{\tau} : \vectil{S} }_{\equiv P}
         }
 \end{equation}
 
+where we can define the following budget terms as
+
+\begin{subequations}
 
 
 
