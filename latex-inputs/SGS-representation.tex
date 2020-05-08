@@ -1,3 +1,8 @@
+\newcommand*\widefbox[1]%
+    {
+    \setlength{\fboxrule}{2pt}% if you like to change box lines thicnes
+    \fcolorbox{red}{white}{#1}%
+}
 \newcommand{\sgsvec}{\mathbf{\tau}} 
 \newcommand{\svec}{\mathbf{S}}
 \newcommand{\rvec}{\mathbf{R}}
@@ -64,31 +69,27 @@ and evaluating each term by term we get the following
 Thus we can express the transport of kinetic energy in index notation as 
 
 \begin{subequations}
-    \begin{equation}
-        \colorboxed{red}{
-            \underbrace{ \pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{k}}{x_{j}} }_{\equiv \frac{Dk}{Dt}} =
-                \underbrace{ - \frac{1}{\rho} \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) }_{\equiv A}
-                \underbrace{ + 2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) }_{\equiv B} 
-                \underbrace{ - 2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} }_{\equiv D}
-                \underbrace{ - \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) }_{\equiv C}
-                \underbrace{ + \tau_{ij} \widetilde{S}_{ij}}_{\equiv P}
-            }
-    \end{equation}
+    \begin{empheq}[box=\widefbox]{equation}
+            \underbrace{\pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{k}}{x_{j}} }_{\equiv \frac{Dk}{Dt}} =
+            \underbrace{ - \frac{1}{\rho} \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) }_{\equiv A}
+            \underbrace{ + 2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) }_{\equiv B} 
+            \underbrace{ - 2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} }_{\equiv D}
+            \underbrace{ - \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) }_{\equiv C}
+            \underbrace{ + \tau_{ij} \widetilde{S}_{ij}}_{\equiv P}
+    \end{empheq}
      
      \text{and in vector notation as}
     
      \newcommand{\vectil}[1]{\mathbf{\widetilde{#1}}}
     
-    \begin{equation}
-        \colorboxed{red}{
+    \begin{empheq}[box=\widefbox]{equation}
             \underbrace{ \pdv{k}{t} + \vectil{u} \cdot \grad{k} }_{\equiv \frac{Dk}{Dt}} = 
                 \underbrace{ - \frac{1}{\rho} \div \left(\widetilde{p} \vectil{u} \right) }_{\equiv A} 
                 \underbrace{ + 2 \nu \div \left( \vectil{u} \cdot \vectil{S} \right) }_{\equiv B}
                 \underbrace{ - 2 \nu \vectil{S}:\vectil{S} }_{\equiv D}
                 \underbrace{ - \div \left( \vectil{u} \cdot \mathbf{\tau} \right) }_{\equiv C}
                 \underbrace{ + \mathbf{\tau} : \vectil{S} }_{\equiv P}
-            }
-    \end{equation}
+    \end{empheq}
     \label{eq:k-transport}
 \end{subequations}
 where we can define the following budget terms as
@@ -162,10 +163,6 @@ On the right hand side in Eq.~\ref{eq:k-transport}:
         larger tham $\varepsilon$.
         
 \end{enumerate}
-
-
-
-
 
 \subsection{SGS Representation}
 From the ``board notes'' the kinetic energy production term in the kinetic

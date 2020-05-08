@@ -128,50 +128,42 @@ production term, namely
 \end{equation}
 Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that the transport
 of enstrophy from the subgrid stress is due to 
-\begin{equation}
-    \colorboxed{red}{
+\begin{empheq}[box=\widefbox]{equation}
         C_{\Omega} \equiv - \pdv{}{x_{l}}\left(\tilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{l}} \right)
-    }
     \label{eq:SGS-enstrophy-transport}
-\end{equation}
+\end{empheq}
 while the production of enstrophy from SGS $P_{\Omega}$ is given by
-\begin{equation}
-    \colorboxed{red}{
+\begin{empheq}[box=\widefbox]{equation}
         P_{\Omega} \equiv
             \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}}
             \pdv{\widetilde{\omega}_{i}}{x_{l}} 
             \label{eq:SGS-enstrophy-production}
-    }
-\end{equation}
+\end{empheq}
 
 To understand the blowup and healing process of the energetics it makes sense to examine the
 transport equation for the filtered enstrophy. We start by substituting in
 Eqs.~\ref{eq:SGS-enstrophy-production} \& \ref{eq:SGS-enstrophy-transport} into
 Eq.~\ref{eq:enstrophy-vector} to get the following in index notation
 \begin{subequations}
-    \begin{equation}
-        \colorboxed{red}{
+    \begin{empheq}[box=\widefbox]{equation}
             \underbrace{\pdv{\Omega}{t} + \widetilde{u}_{j} \pdv{\Omega}{x_{j}}}_{\equiv \matderv{\Omega}} =
                 \underbrace{\widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}}_{\equiv A_{\Omega}}
                 \underbrace{+ \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)}_{\equiv B_{\Omega}}
                 \underbrace{- \nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv D_{\Omega}}
                 \underbrace{- \pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \right)}_{\equiv C_{\Omega}} 
                 \underbrace{+ \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \pdv{\widetilde{\omega}_{i}}{x_{l}}}_{\equiv P_{\Omega}} 
-                }
         \label{eq:enstrophy-transport-index}
-    \end{equation}
+    \end{empheq}
     \text{and in vector notation as}
-    \begin{equation}
-        \colorboxed{red}{
+    \begin{empheq}[box=\widefbox]{equation}
             \underbrace{\pdv{\Omega}{t} + \mathbf{\widetilde{u}} \cdot \grad \Omega  }_{\equiv \matderv{\Omega}} =
                 \underbrace{\mathbf{\widetilde{\omega}} \cdot \mathbf{\widetilde{S}} \cdot \mathbf{\widetilde{\omega}} }_{\equiv A_{\Omega}}
                 \underbrace{+ \nu \div \left( \grad \Omega \right)}_{\equiv B_{\Omega}}
                 \underbrace{- \nu \grad \mathbf{\widetilde{\omega}} : \grad \mathbf{\widetilde{\omega}}}_{\equiv D_{\Omega}}
                 \underbrace{- \div \left( \mathbf{\widetilde{\omega}} \cdot \curl \mathbf{\tau} \right)  }_{\equiv C_{\Omega}} 
                 \underbrace{+ \curl \mathbf{\tau} : \grad \mathbf{\widetilde{\omega}} }_{\equiv P_{\Omega}} 
-                }
             \label{eq:enstrophy-transport-vec}
-    \end{equation}
+    \end{empheq}
     \label{eq:enstrophy-transport}
 \end{subequations}
 Furthermore we can define the following budget terms as
