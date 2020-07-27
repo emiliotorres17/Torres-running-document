@@ -48,6 +48,9 @@
 \usepackage{hyperref}                   %highlights references
 \usepackage[all]{hypcap}                %for going to the top of an image when a figure ref is clicked
 \usepackage{titlesec}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
 %=========================================================================%
 %hyperlink setup                                                          %
 %=========================================================================%
@@ -253,22 +256,48 @@
 %-------------------------------------------------------------------------%
 % Color box                                                               %
 %-------------------------------------------------------------------------%
-\newcommand*{\colorboxed}{}
-\def\colorboxed#1#{%
-    \colorboxedAux{#1}%
-}
-\newcommand*{\colorboxedAux}[3]{%
- % #1: optional argument for color model
- % #2: color specification
- % #3: formula
- \begingroup
-   \colorlet{cb@saved}{.}%
-   \color#1{#2}%
-   \boxed{%
-     \color{cb@saved}%
-     #3%
-   }%
- \endgroup
+%\newcommand*{\colorboxed}{}
+%\def\colorboxed#1#{%
+%    \colorboxedAux{#1}%
+%}
+%\newcommand*{\colorboxedAux}[3]{%
+% % #1: optional argument for color model
+% % #2: color specification
+% % #3: formula
+% \begingroup
+%   \colorlet{cb@saved}{.}%
+%   \color#1{#2}%
+%   \boxed{%
+%     \color{cb@saved}%
+%     #3%
+%   }%
+% \endgroup
+%}
+%\newcommand{\colorboxed}[2]{
+%    \begin{mdframed}[
+%            linecolor=red,linewidth=2pt,% 
+%            frametitlerule=true,% 
+%            apptotikzsetting={\tikzset{mdfframetitlebackground/.append style={%
+%            shade,left color=white, right color=blue!20}}}, 
+%            frametitlerulecolor=blue,
+%            frametitlerulewidth=1pt, innertopmargin=\topskip,
+%            frametitle={Non Mutually Exclusive Events},
+%            outerlinewidth=1.25pt
+%        ]
+%        #1
+%    \end{mdframed}
+%}
+
+%\newcommand{\colorboxed}[2]{
+%    \begin{mdframed}[linecolor=#1,linewidth=2pt]
+%        #2
+%    \end{mdframed}
+%}
+
+\newcommand{\colorboxed}[1]{
+    \begin{empheq}[box=\widefbox]{equation}
+        #1
+    \end{empheq}
 }
 %-------------------------------------------------------------------------%
 % Adding draft water mark                                                 %

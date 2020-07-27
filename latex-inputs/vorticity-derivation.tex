@@ -117,62 +117,56 @@ inside the first derivative gives
         - \tilde{\omega}_{i}  \pdv{}{x_{l}} \underbrace{\varepsilon_{ijk} \pdv{}{x_{j}}
         \tau_{kl}}_{\equiv \curl \mathbf{\tau}}
 \end{equation}
-Substituting  $\Psi_{il}$ for $\curl \mathbf{\tau}$ the following can be 
-arranged to get 
+
+Next the subgrid stress term can be arranged into a divergence and
+production term, namely
 \begin{equation}
-    \begin{split}
-        - \tilde{\omega}_{i}  \pdv{}{x_{l}} \varepsilon_{ijk} \pdv{}{x_{j}} \tau_{kl}  = &
-            -\tilde{\omega}_{i} \pdv{\Psi_{il}}{x_{l}} \\
-            & = - \underbrace{\pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)}_{\equiv \text{Transport, $\Pi_{\Omega}$}}
-            + \underbrace{\Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}}_{\equiv \text{Production, $P_{\Omega}$}}
-    \end{split}
+        - \tilde{\omega}_{i}  \pdv{}{x_{l}} \varepsilon_{ijk} \pdv{}{x_{j}} \tau_{kl}  = 
+             = - \underbrace{\pdv{}{x_{l}}\big(\tilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \big)}_{\equiv \text{Transport, $C_{\Omega}$}}
+            + \underbrace{\varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \pdv{\tilde{\omega}_{i}}{x_{l}}}_{\equiv \text{Production, $P_{\Omega}$}}
     \label{eq:trans-enstrophy}
 \end{equation}
 Therefore from Eq.~\ref{eq:trans-enstrophy} it is clear that the transport
 of enstrophy from the subgrid stress is due to 
-\begin{equation}
-    \colorboxed{red}{
-        \Pi_{\Omega} \equiv - \pdv{}{x_{l}}\big(\tilde{\omega}_{i} \Psi_{il} \big)
-    }
+\begin{empheq}[box=\widefbox]{equation}
+        C_{\Omega} \equiv - \pdv{}{x_{l}}\left(\tilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{l}} \right)
     \label{eq:SGS-enstrophy-transport}
-\end{equation}
+\end{empheq}
 while the production of enstrophy from SGS $P_{\Omega}$ is given by
-\begin{equation}
-    \colorboxed{red}{
-        P_{\Omega} \equiv  \Psi_{il} \pdv{\tilde{\omega}_{i}}{x_{l}}  =
-            \varepsilon_{ijk} \pdv{\widetilde{\omega}_{i}}{x_{l}}
-            \pdv{\tau_{kl}}{x_{j}}
+\begin{empheq}[box=\widefbox]{equation}
+        P_{\Omega} \equiv
+            \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}}
+            \pdv{\widetilde{\omega}_{i}}{x_{l}} 
             \label{eq:SGS-enstrophy-production}
-    }
-\end{equation}
+\end{empheq}
 
 To understand the blowup and healing process of the energetics it makes sense to examine the
 transport equation for the filtered enstrophy. We start by substituting in
 Eqs.~\ref{eq:SGS-enstrophy-production} \& \ref{eq:SGS-enstrophy-transport} into
 Eq.~\ref{eq:enstrophy-vector} to get the following in index notation
 \begin{subequations}
-    \begin{equation}
-        \underbrace{\pdv{\Omega}{t} + \widetilde{u}_{j} \pdv{\Omega}{x_{i}}}_{\equiv \matderv{\Omega}} =
-            \underbrace{\widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}}_{\equiv A_{\Omega}}
-            \underbrace{+ \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)}_{\equiv B_{\Omega}}
-            \underbrace{- \nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv D_{\Omega}}
-            \underbrace{- \pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \Psi_{ij}\right)}_{\equiv \Pi_{\Omega}} 
-            \underbrace{+ \Psi_{ij} \pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv P_{\Omega}} 
+    \begin{empheq}[box=\widefbox]{equation}
+            \underbrace{\pdv{\Omega}{t} + \widetilde{u}_{j} \pdv{\Omega}{x_{j}}}_{\equiv \matderv{\Omega}} =
+                \underbrace{\widetilde{\omega}_{i} \widetilde{S}_{ij} \widetilde{\omega}_{j}}_{\equiv A_{\Omega}}
+                \underbrace{+ \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)}_{\equiv B_{\Omega}}
+                \underbrace{- \nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}}_{\equiv D_{\Omega}}
+                \underbrace{- \pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \right)}_{\equiv C_{\Omega}} 
+                \underbrace{+ \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \pdv{\widetilde{\omega}_{i}}{x_{l}}}_{\equiv P_{\Omega}} 
         \label{eq:enstrophy-transport-index}
-    \end{equation}
+    \end{empheq}
     \text{and in vector notation as}
-    \begin{equation}
-        \underbrace{\pdv{\Omega}{t} + \mathbf{\widetilde{u}} \cdot \grad \Omega  }_{\equiv \matderv{\Omega}} =
-            \underbrace{\mathbf{\widetilde{\omega}} \cdot \mathbf{\widetilde{S}} \cdot \mathbf{\widetilde{\omega}} }_{\equiv A_{\Omega}}
-            \underbrace{+ \nu \div \left( \grad \Omega \right)}_{\equiv B_{\Omega}}
-            \underbrace{- \nu \grad \mathbf{\widetilde{\omega}} : \grad \mathbf{\widetilde{\omega}}}_{\equiv D_{\Omega}}
-            \underbrace{- \div \left( \mathbf{\widetilde{\omega}} \cdot \mathbf{\Psi} \right)  }_{\equiv \Pi_{\Omega}} 
-            \underbrace{+ \mathbf{\Psi} : \grad \mathbf{\widetilde{\omega}} }_{\equiv P_{\Omega}} 
+    \begin{empheq}[box=\widefbox]{equation}
+            \underbrace{\pdv{\Omega}{t} + \mathbf{\widetilde{u}} \cdot \grad \Omega  }_{\equiv \matderv{\Omega}} =
+                \underbrace{\mathbf{\widetilde{\omega}} \cdot \mathbf{\widetilde{S}} \cdot \mathbf{\widetilde{\omega}} }_{\equiv A_{\Omega}}
+                \underbrace{+ \nu \div \left( \grad \Omega \right)}_{\equiv B_{\Omega}}
+                \underbrace{- \nu \grad \mathbf{\widetilde{\omega}} : \grad \mathbf{\widetilde{\omega}}}_{\equiv D_{\Omega}}
+                \underbrace{- \div \left( \mathbf{\widetilde{\omega}} \cdot \curl \mathbf{\tau} \right)  }_{\equiv C_{\Omega}} 
+                \underbrace{+ \curl \mathbf{\tau} : \grad \mathbf{\widetilde{\omega}} }_{\equiv P_{\Omega}} 
             \label{eq:enstrophy-transport-vec}
-    \end{equation}
+    \end{empheq}
     \label{eq:enstrophy-transport}
 \end{subequations}
-where we can define the following budget terms as
+Furthermore we can define the following budget terms as
 \begin{subequations}
     \begin{align}
         A_{\Omega} \equiv \; &
@@ -181,10 +175,10 @@ where we can define the following budget terms as
             \nu \pdv{}{x_{j}} \left( \pdv{\Omega}{x_{j}} \right)\\
         D_{\Omega} \equiv \; &
             -\nu \pdv{\widetilde{\omega_{i}}}{x_{j}}\pdv{\widetilde{\omega}_{i}}{x_{j}}\\
-        \Pi_{\Omega} \equiv \; &
-            -\pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \Psi_{ij}\right)\\
+        C_{\Omega} \equiv \; &
+            -\pdv{}{x_{j}} \left(\widetilde{\omega}_{i} \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \right)\\
         P_{\Omega} \equiv \; &
-            \Psi_{ij} \pdv{\widetilde{\omega}_{i}}{x_{j}}
+            \varepsilon_{ijk} \pdv{\tau_{kl}}{x_{j}} \pdv{\widetilde{\omega}_{i}}{x_{j}}
     \end{align}
 \end{subequations}
 
@@ -198,7 +192,7 @@ On the right side of Eq.~\ref{eq:enstrophy-transport}
         
     \item
         Term $\benst$ accounts for the redistribution of enstrophy within in the resolved scales.
-        Since $\benst$ can be written in ``flux form'' $\div \equiv \pdv*{(\;)}{x_{j}}$, meaning it
+        Since $\benst$ can be written in ``flux form'' $\div(\;)_{j} \equiv \pdv*{(\;)_{j}}{x_{j}}$, meaning it
         appears as a divergence of the quantity in parenthesis, and thus cannot correspond to the
         net addition or removal of enstrophy $\Omega$ from the flow as a whole. Instead, it only
         acts to redistribute the enstrophy within the flow; any increase in $\Omega$ that it
@@ -212,7 +206,7 @@ On the right side of Eq.~\ref{eq:enstrophy-transport}
         to remove enstrophy form the resolved scales.
        
     \item
-        Term $\pienst$ accounts for the redistribution of the enstrophy with in the resolved scales
+        Term $C_{\Omega}$ accounts for the redistribution of the enstrophy with in the resolved scales
         by the subgrid stress; it analogous to term $\benst$ but accounts for the redistribution by
         the subgrid stresses rather than by the viscous stresses.
 
@@ -220,7 +214,7 @@ On the right side of Eq.~\ref{eq:enstrophy-transport}
         Term $\penst$ accounts for the subgrid production of enstrophy, namely the enstrophy
         exchange between the resolved and subgrid scales. This term can be locally positive or
         negative; whenever $\penst < 0 $ there is enstrophy transfer from the resolved scales into
-        the subgrid scales (''forward scatter'' of enstrophy), and whenever $\penst >0$ there is an
+        the subgrid scales (``forward scatter'' of enstrophy), and whenever $\penst >0$ there is an
         enstrophy transfer from the subgrid scales into the resolved scales (``backscatter'' of
         enstrophy).
 \end{enumerate}
