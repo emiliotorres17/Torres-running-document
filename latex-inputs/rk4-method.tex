@@ -243,7 +243,256 @@ in red being relocated to other side of the domain.
     \label{fig:location-adjustment}
 \end{figure}
 
+\subsection{RK4 test}
+Next, we use the numerical schemes described above to quantify the
+performance of the backwards tracking tool. First a random coordinate point
+$\mathbf{x}=(x_{1}, x_{2}, x_{3})$ initially located on a grid point. Next,
+the coordinate point is advected forward in time using the forward RK4
+scheme and the velocities from the ALES simulation, storing the solution
+for the three coordinate locations after every time step. Furthermore, for
+testing purposes the coordinate point was advected for 500 time steps which
+is approximately times as many times required. Moreover, velocity fields
+from a Basic Smagorinsky (i.e., $C_{DS} =0$) simulation calculated using
+three different grids of $N=$32, 64 , and 128 were used in the testing.
+Additionally, not only was the back tracking test performed using three
+different grids, each grid was tested five times, giving a total number of
+15 test. Therefore the results presented in
+Figs.(\ref{fig:back-tracking-32}-\ref{fig:back-tracking-128}) show the
+cases with the largest disparity at $t=0$.  
 
-        
 
-\subsection{Comparison}
+\newpage
+The following results shown in Fig.~(\ref{fig:back-tracking-32}) show the
+results for $N=32$. The plots represent the evolution of a point going
+backwards in time, therefore along the x-axis the time steps start at the
+final time step ($t=t_{0} + 500 \Delta t$) and advance towards the initial
+time $t=t_{0}$.  
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/error-32.png}
+        \caption{Error for $N=32$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x1-32-tracking.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x2-32-tracking.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x3-32-tracking.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=32$}
+    \label{fig:back-tracking-32}
+\end{figure}
+Key observations:
+\begin{itemize}
+    \item The back tracking appears to be very accurate for the first $\sim
+        200$ time steps, even at a low spatial and temporal resolution.
+        However, at $t=t_{0}$ the tracking is not even close and we are at
+        a completely different part of the domain all together.
+    \item It appears that once deviation occurs the subroutine almost
+        immediately starts following another point since the difference
+        just continues to grow. This is not surprising since this is what
+        we expected and the reason we are verifying the subroutine.
+    \item The error appears to be growing over time as we predicted in the
+        phone call, therefore the longer we track the more inaccurate are
+        coordinate location becomes. However, given how quickly blowup
+        occurs this method is still a valid approach for tracking.
+
+\end{itemize}
+
+The following results shown in Fig.~(\ref{fig:back-tracking-64}) represent
+the solution for $N=64$ (\emph{\textbf{note the scale factor on the
+y-axis of the error plot}}).
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/error-64.png}
+        \caption{Error for $N=64$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x1-64-tracking.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x2-64-tracking.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x3-64-tracking.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=64$}
+    \label{fig:back-tracking-64}
+\end{figure}
+Key observations:
+\begin{itemize}
+    \item Here we can see that an increase in the spatial and temporal
+        resolutions greatly increase the subroutines performance. Doubling
+        the grid points reduces the error by a factor of $\sim20$ ($6/0.3$).
+    \item With $N=64$ the back tracking appears to be accurate up to $\sim
+        400$ time steps.
+\end{itemize}
+
+The following results shown in Fig.~(\ref{fig:back-tracking-64}) represent
+the solution for $N=128$ (\emph{\textbf{note the scale factor on the
+y-axis of the error plot}}).
+
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/error-128.png}
+        \caption{Error for $N=128$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x1-128-tracking.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x2-128-tracking.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x3-128-tracking.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=128$}
+    \label{fig:back-tracking-128}
+\end{figure}
+Key observations:
+\begin{itemize}
+    \item Again we can see the error accumulates in time, as we predicted,
+            however it is obvious that an increase in resolution leads to
+            increase in the number of time steps we can track back in time. 
+    \item With $N=128$ we can back track very accurately for about $\sim 500$
+        time steps.
+\end{itemize}
+\newpage
+Lastly, we can zoom in on the first $200$ time steps $t=t_{0}+500\Delta t
+\rightarrow t = t_{0} + 300\Delta t$ of backwards tracking results in order
+to gain further knowledge of the accuracy of the back tracking performance.
+Starting with the results of $N=32$ shown in
+Fig.~(\ref{fig:back-tracking-32-2}) (\emph{\textbf{note the scale factor on the
+y-axis of the error plot}}).
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/error-32-2.png}
+        \caption{Error for $N=32$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x1-32-tracking-2.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x2-32-tracking-2.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/x3-32-tracking-2.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=32$}
+    \label{fig:back-tracking-32-2}
+\end{figure}
+\newpage
+
+Next, we have the results for $N=64$ shown in
+Fig.~(\ref{fig:back-tracking-64-2}) (\emph{\textbf{note the scale factor on the
+y-axis of the error plot}}).
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/error-64-2.png}
+        \caption{Error for $N=64$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x1-64-tracking-2.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x2-64-tracking-2.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/x3-64-tracking-2.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=64$}
+    \label{fig:back-tracking-64-2}
+\end{figure}
+\newpage
+Lastly, we have the results for $N=128$ shown in
+Fig.~(\ref{fig:back-tracking-128-2}) (\emph{\textbf{note the scale factor on the
+y-axis of the error plot}}).
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/error-128-2.png}
+        \caption{Error for $N=128$}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x1-128-tracking-2.png}
+        \caption{$x_{1}$ location}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x2-128-tracking-2.png}
+        \caption{$x_{2}$ location}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/x3-128-tracking-2.png}
+        \caption{$x_{3}$ location}
+    \end{subfigure}
+    \caption{Results for $N=64$}
+    \label{fig:back-tracking-128-2}
+\end{figure}
+\newpage
+The last set of results are used to highlight to accumulation of error over
+time, done by plotting error versus time step on a semi-logy scale for the
+three cases.
+\begin{figure}[H]
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-32/error-32-log.png}
+        \caption{Semi-logy error for $N=32$}
+        \label{fig:error-32-semilogy}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-64/error-64-log.png}
+        \caption{Semi-logy error for $N=64$}
+        \label{fig:error-64-semilogy}
+    \end{subfigure}
+    \begin{subfigure}[H]{0.45\textwidth}
+        \includegraphics[height=2.5in]{media/rk4/run-128/error-128-log.png}
+        \caption{Semi-logy error for $N=128$}
+        \label{fig:error-128-semilogy}
+    \end{subfigure}
+    \caption{Semi-logy error study}
+\end{figure}
+Key observation:
+\begin{itemize}
+    \item Clearly the error accumulates over time. 
+    \item If we want to take a conservative approach and start using 
+            $N=128$ grid points, then even tracking back $\sim100$ time
+            steps we can expect an error of $\sim 10^{-8}$, which is
+            comparative to what we would expect with a fourth order time
+            stepping method with $\Delta t \sim 10^{-2}$ 
+            (i.e., $(\Delta t)^{4} \sim 10^{-8}$).
+\end{itemize}
+
