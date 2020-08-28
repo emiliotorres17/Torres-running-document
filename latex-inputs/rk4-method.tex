@@ -1,13 +1,13 @@
 \section{Runge-Kutta Tracking}
-Next we use the following subsections to describe in detail the Runge-Kutta
+We use the following subsections to describe in detail the Runge-Kutta
 (RK) methods used to track the blowup point both forwards and backwards in
-time.  Starting with the transport equation of a point, namely
+time.  Starting with the coordinate point transport equation, namely
 \begin{equation}
     \dv{\mathbf{x}}{t}  = \mathbf{u}
 \end{equation}
 where $\mathbf{x}$ is the coordinate vector ($\mathbf{x} = x_{i} = \left(x_{1},
 x_{2}, x_{3} \right)$) and $\mathbf{u}$ is the velocity at point $i$.  
-Thus, we get the following three differential equations for each coordinate
+This gives the following three differential equations for each coordinate
 point,
 \begin{subequations}
     \begin{equation}
@@ -32,9 +32,10 @@ For the forward tracking a fully explicit fourth order RK time integration
 scheme was used in order to remain consistent with the ALES pseudo spectral
 code. We start by converting the continuous coordinate transport equations
 given in Eqs.~(\ref{eq:x1-transport}-\ref{eq:x3-transport}) to discrete
-equations, we will however restrict the derivation to a single point
-$x=x_{1}$ even though the subsequent derivation is applied to all three
-coordinate points,  
+equations. Additionally, we will restrict the following  derivation to a
+single point $x=x_{1}$, however the derivation applies to all three
+coordinate directions. Starting with the discrete transport equation for
+$x=x_{1}$  
 \begin{equation}
     \dv{x_{1}}{t} =  u_{1}(\mathbf{x},t) \approx f(x_{i},t^{n})
     \label{eq:x1-discrete-space}
@@ -53,9 +54,8 @@ $x^{n+1}_{i}$ giving
 \begin{equation}
     x^{n+1}_{i} = x^{n}_{i} + \Delta t f(x_{i},t^{n})
 \end{equation}
-Additionally, applying the classical explicit RK4 method we can substitute
-the slope $f$ as a set of estimated slopes and express the above equation
-as
+Applying the classical explicit RK4 method for $f$ we get the following
+equation, 
 \begin{subequations}
     \begin{equation}
         x^{n+1}_{i} = x^{n}_{i} 
@@ -69,34 +69,34 @@ as
         \item $k_{1}$ is the slope evaluated at the beginning of the interval
             at $t=t_{n}$ and $x=x_{i}$,
             \begin{equation}
-                k_{1} = f\left(x_{i}, t^{n}\right)
+                k_{1} = f\left(x_{i}, t_{n}\right)
             \end{equation}
     
         \item $k_{2}$ is the slope evaluated at the midpoint of the interval at$t = t_{n}+\frac{\Delta t}{2}$   and $x_{i} =
             x_{i} + \frac{1}{2} \Delta t k_{1}$,
             \begin{equation}
-                k_{2} = f\left(x_{i} + \frac{1}{2} \Delta t k_{1}, t^{n}+\frac{\Delta t}{2}\right)
+                k_{2} = f\left(x_{i} + \frac{1}{2} \Delta t k_{1}, t_{n}+\frac{\Delta t}{2}\right)
             \end{equation}
     
         \item $k_{3}$ is the slope also evaluated at the midpoint of the interval $t=t_{n}+\frac{\Delta t}{2}$
             and $x = x_{i} + \frac{1}{2} \Delta t k_{2} $. 
             \begin{equation}
-                k_{3} = f\left(x_{i} + \frac{1}{2} \Delta t k_{2}, t^{n}+\frac{\Delta t}{2} \right)
+                k_{3} = f\left(x_{i} + \frac{1}{2} \Delta t k_{2}, t_{n}+\frac{\Delta t}{2} \right)
             \end{equation}
     
         \item $k_{4}$ is the slope evaluated at the end of the interval at $t=t_{n}+\Delta t$ and
             $x=x_{i} + \Delta t k_{3}$,
             \begin{equation}
-                k_{4} = f\left(x_{i} + \Delta t k_{3}, t^{n} + \Delta t \right)
-                \label{eq:k4}
+                k_{4} = f\left(x_{i} + \Delta t k_{3}, t_{n} + \Delta t \right)
+                \label{eq:forward-k4}
             \end{equation}
     \end{itemize}
 \end{subequations}
-Equations~(\ref{eq:x1-transport}-\ref{eq:k4}) provide a fourth order in
+Equations~(\ref{eq:x1-transport}-\ref{eq:forward-k4}) provide a fourth order in
 time Runge-Kutta time advancement scheme, however, since as mentioned above
 the velocities are only known at specific grid point locations an
 additional interpolation scheme is required to fully be able to forward
-track a coordinate point fully be able to forward track a coordinate point. 
+track a coordinate point.
 
 \subsection{Backwards Tracking} 
 Similarly to the forward tracking, the backwards tracking subroutine also
@@ -111,7 +111,7 @@ following discrete equation,
 \end{equation}
 where $x^{t_{f}}_{i}$ and $x^{t_{f-1}}_{i}$ are the coordinate locations at
 the final time step $t_{f}$ and the previous time step $t_{f-1}$,
-respectively. Solving for the location at time step $t^{f-1}$ gives 
+respectively. Solving for the location at time step $t_{f-1}$ gives 
 \begin{equation}
     x^{t_{f-1}}_{i} = x^{t_{f}}_{i} - \Delta t f\left(x_{i}, t_{f}\right) 
 \end{equation}
@@ -139,7 +139,7 @@ described below:
         \item $k_{3}$ is the slope also evaluated at the midpoint of the interval $t=t_{f}-\frac{\Delta t}{2}$
             and $x = x_{i} - \frac{1}{2} \Delta t k_{2} $. 
             \begin{equation}
-                k_{3} = f\left(x_{i} - \frac{1}{2} \Delta t k_{2}, t_{n}-\frac{\Delta t}{2} \right)
+                k_{3} = f\left(x_{i} - \frac{1}{2} \Delta t k_{2}, t_{f}-\frac{\Delta t}{2} \right)
             \end{equation}
     
         \item $k_{4}$ is the slope evaluated at the end of the interval at $t=t_{f}-\Delta t$ and
@@ -160,10 +160,10 @@ coordinate point back in time,
     \end{equation}
     where, 
     \begin{align}
-        k_{1} & = f\left(x_{i}, t^{n+1}\right)  \\
-        k_{2} & = f\left(x_{i} - \frac{1}{2}\Delta t k_{1}, t^{n+1}-\frac{1}{2} \Delta t\right) \\
-        k_{3} & = f\left(x_{i} - \frac{1}{2}\Delta t k_{2}, t^{n+1}-\frac{1}{2} \Delta t\right) \\
-        k_{4} & = f\left(x_{i} - \Delta t k_{3}, t^{n+1}- \Delta t\right)
+        k_{1} & = f\left(x_{i}, t_{n+1}\right)  \\
+        k_{2} & = f\left(x_{i} - \frac{1}{2}\Delta t k_{1}, t_{n+1}-\frac{1}{2} \Delta t\right) \\
+        k_{3} & = f\left(x_{i} - \frac{1}{2}\Delta t k_{2}, t_{n+1}-\frac{1}{2} \Delta t\right) \\
+        k_{4} & = f\left(x_{i} - \Delta t k_{3}, t_{n+1}- \Delta t\right)
     \end{align}
 \end{subequations}
 
@@ -205,15 +205,16 @@ velocity value.
 Moreover, since the coordinate point being tracked needs to be within the
 computational domain of the grid, which for a cell centered mesh on
 physical grid of $0 \leq x_{1}, x_{2}, x_{3} \leq 2\pi$ gives a computation
-grid of $[1/2 \Delta x, 2\pi-1/2 \Delta]$, additional ghost cells have to
-be added to the edges of the computational domain. Since the ALES pseudo
-code already uses periodic boundary conditions makes appending the grid
-points at $i,j,k=N$ to $i,j,k=0$ and $i,j,k=0$ to $i,j,k=N$ respectively,
-the most practical option for implementing ghost cells. The addition of the
-ghost cells therefore changes the velocity computational domain to
-$-1/2 \Delta x \leq x_{1}, x_{2}, x_{3} \leq 2\pi + 1/2 \Delta x$. A
-two-dimensional example of how the ghost cells were applied in the
-interpolation scheme can be seen in Fig.~(\ref{fig:ghost-cell-example}).
+grid of $[1/2 \Delta x, 2\pi-1/2 \Delta x]$ requires additional ghost cells
+to be added to the edges in order to bound any point between $[0, \Delta
+x/2]$ and $[2\pi-\Delta x/2, 2\pi]$.  For this we can take advantage of the
+periodic boundary conditions in the ALES code and simply append the
+velocities at the grid points $i,j,k=N$ to $i,j,k=0$ and $i,j,k=0$ to
+$i,j,k=N$.  The addition of the ghost cells therefore changes the velocity
+computational domain to $-1/2 \Delta x \leq x_{1}, x_{2}, x_{3} \leq 2\pi +
+1/2 \Delta x$. A two-dimensional example of how the ghost cells were
+applied in the interpolation scheme can be seen in
+Fig.~(\ref{fig:ghost-cell-example}).
 \begin{figure}[H]
     \includegraphics[height=0.35\textheight]{media/rk4/periodic-BCs}
     \caption{Ghost cell examples for $N=4$}
@@ -235,33 +236,36 @@ where $x<0$ or subtracting $2\pi$ for cases where $x>0$, namely
 \end{equation}
 An two-dimensional example of how the location of $x$ is adjusted in the
 forwards and backwards tracking code can be seen in
-Fig~(\ref{fig:location-adjustment}), where we can see how the initial point
-in red being relocated to other side of the domain.
+Fig~(\ref{fig:location-adjustment}), where we can see how the coordinate
+point is relocated to opposite side of the domain.
 \begin{figure}[H]
     \includegraphics[height=0.35\textheight]{media/rk4/location-adjustment}
     \caption{Example of how the $x$ location is adjusted using periodic B.C.s}
     \label{fig:location-adjustment}
 \end{figure}
 
-\subsection{RK4 test}
-Next, we use the numerical schemes described above to quantify the
-performance of the backwards tracking tool. First a random coordinate point
-$\mathbf{x}=(x_{1}, x_{2}, x_{3})$ initially located on a grid point. Next,
-the coordinate point is advected forward in time using the forward RK4
-scheme and the velocities from the ALES simulation, storing the solution
-for the three coordinate locations after every time step. Furthermore, for
-testing purposes the coordinate point was advected for 500 time steps which
-is approximately times as many times required. Moreover, velocity fields
-from a Basic Smagorinsky (i.e., $C_{DS} =0$) simulation calculated using
-three different grids of $N=$32, 64 , and 128 were used in the testing.
-Additionally, not only was the back tracking test performed using three
-different grids, each grid was tested five times, giving a total number of
-15 test. Therefore the results presented in
+\subsection{RK4 test} 
+Next, we use the numerical schemes described above to
+quantify the performance of the backwards tracking tool. First a random
+coordinate point $\mathbf{x}=(x_{1}, x_{2}, x_{3})$ initially located on a
+grid point is advected forward in time using the forward RK4 scheme and the
+velocities from the ALES simulation, storing the solution for the three
+coordinate locations after every time step. After the forward in time
+reaches the inputted number of time steps, it writes a file with the times
+and locations associated with that point. Next, the backwards tracking
+subroutines reads in the last entry of the forward file as the initial
+condition. Again the backwards tracking subroutine runs for a set number of
+time steps storing the times and locations for each step. For testing
+purposes the coordinate point was advected for 500 time steps which is
+approximately five times as many times required for our analysis. Moreover,
+velocity fields from a Basic Smagorinsky (i.e., $C_{DS} =0$) simulation
+calculated using three different grids of $N=$32, 64 , and 128 were used in
+the testing.  Additionally, not only was the back tracking test performed
+using three different grids, each grid was tested five times, giving a
+total number of 15 test. Therefore the results presented in
 Figs.(\ref{fig:back-tracking-32}-\ref{fig:back-tracking-128}) show the
 cases with the largest disparity at $t=0$.  
 
-
-\newpage
 The following results shown in Fig.~(\ref{fig:back-tracking-32}) show the
 results for $N=32$. The plots represent the evolution of a point going
 backwards in time, therefore along the x-axis the time steps start at the
@@ -337,7 +341,7 @@ Key observations:
 \begin{itemize}
     \item Here we can see that an increase in the spatial and temporal
         resolutions greatly increase the subroutines performance. Doubling
-        the grid points reduces the error by a factor of $\sim20$ ($6/0.3$).
+        the grid points reduces the error by a factor of $\sim20$ (i.e., $6/0.3$).
     \item With $N=64$ the back tracking appears to be accurate up to $\sim
         400$ time steps.
 \end{itemize}
@@ -374,7 +378,7 @@ Key observations:
     \item Again we can see the error accumulates in time, as we predicted,
             however it is obvious that an increase in resolution leads to
             increase in the number of time steps we can track back in time. 
-    \item With $N=128$ we can back track very accurately for about $\sim 500$
+    \item With $N=128$ we can back track very accurately for $\sim 500$
         time steps.
 \end{itemize}
 \newpage
