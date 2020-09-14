@@ -60,6 +60,10 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{citeblue}{RGB}{015, 055, 250}
 \definecolor{gblue}{RGB}{055, 055, 150}
+\definecolor{phxorange}{RGB}{229, 96, 32}
+\definecolor{dodgerblue}{RGB}{0, 90, 156}
+\definecolor{eggshell}{RGB}{240, 234, 214}
+\definecolor{pythonblue}{RGB}{24, 23, 162}
 
 \hypersetup{%color all links blue
                 plainpages=false,
@@ -132,6 +136,7 @@
 %-------------------------------------------------------------------------%
 %Header                                                                   %
 %-------------------------------------------------------------------------%
+\pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.0pt}
 \fancyhead[L]{}
 \fancyhead[C]{}
@@ -254,6 +259,19 @@
 %-------------------------------------------------------------------------%
 \newcommand{\eqlabel}[1]{Eq.~\ref{#1}}
 %-------------------------------------------------------------------------%
+% Making dashline                                                         %
+%-------------------------------------------------------------------------%
+\newcommand{\dashline}[1]
+    {
+    \raisebox{1mm}{
+        \textcolor{#1}{\rule{0.25cm}{0.5mm}}
+        \hspace{0.025cm}
+        \textcolor{#1}{\rule{0.25cm}{0.5mm}}
+        \hspace{0.025cm}
+        \textcolor{#1}{\rule{0.25cm}{0.5mm}}
+        }
+    }
+%-------------------------------------------------------------------------%
 % Color box                                                               %
 %-------------------------------------------------------------------------%
 %\newcommand*{\colorboxed}{}
@@ -300,7 +318,12 @@
     \end{empheq}
 }
 %-------------------------------------------------------------------------%
-% Adding draft water mark                                                 %
+% Expanding matrices                                                      %
 %-------------------------------------------------------------------------%
-%\newwatermark[allpages,color=red!50,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
-
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
