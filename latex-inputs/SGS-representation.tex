@@ -71,11 +71,11 @@ Thus we can express the transport of kinetic energy in index notation as
 \begin{subequations}
     \begin{empheq}[box=\widefbox]{equation}
             \underbrace{\pdv{k}{t} + \widetilde{u}_{j} \pdv{\widetilde{k}}{x_{j}} }_{\equiv \frac{Dk}{Dt}} =
-            \underbrace{ - \frac{1}{\rho} \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) }_{\equiv A}
-            \underbrace{ + 2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) }_{\equiv B} 
-            \underbrace{ - 2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} }_{\equiv D}
-            \underbrace{ - \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) }_{\equiv C}
-            \underbrace{ + \tau_{ij} \widetilde{S}_{ij}}_{\equiv P}
+            \underbrace{ - \frac{1}{\rho} \pdv{}{x_{j}} \bigg( \widetilde{p}\widetilde{u}_{j}\bigg) }_{\equiv A_{k}}
+            \underbrace{ + 2\nu \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \widetilde{S}_{ij} \bigg) }_{\equiv B_{k}} 
+            \underbrace{ - 2\nu \widetilde{S}_{ij} \widetilde{S}_{ij} }_{\equiv D_{k}}
+            \underbrace{ - \pdv{}{x_{j}}\bigg(\widetilde{u}_{i} \tau_{ij}\bigg) }_{\equiv C_{k}}
+            \underbrace{ + \tau_{ij} \widetilde{S}_{ij}}_{\equiv P_{k}}
     \end{empheq}
      
      \text{and in vector notation as}
@@ -84,11 +84,11 @@ Thus we can express the transport of kinetic energy in index notation as
     
     \begin{empheq}[box=\widefbox]{equation}
             \underbrace{ \pdv{k}{t} + \vectil{u} \cdot \grad{k} }_{\equiv \frac{Dk}{Dt}} = 
-                \underbrace{ - \frac{1}{\rho} \div \left(\widetilde{p} \vectil{u} \right) }_{\equiv A} 
-                \underbrace{ + 2 \nu \div \left( \vectil{u} \cdot \vectil{S} \right) }_{\equiv B}
-                \underbrace{ - 2 \nu \vectil{S}:\vectil{S} }_{\equiv D}
-                \underbrace{ - \div \left( \vectil{u} \cdot \mathbf{\tau} \right) }_{\equiv C}
-                \underbrace{ + \mathbf{\tau} : \vectil{S} }_{\equiv P}
+                \underbrace{ - \frac{1}{\rho} \div \left(\widetilde{p} \vectil{u} \right) }_{\equiv A_{k}} 
+                \underbrace{ + 2 \nu \div \left( \vectil{u} \cdot \vectil{S} \right) }_{\equiv B_{k}}
+                \underbrace{ - 2 \nu \vectil{S}:\vectil{S} }_{\equiv D_{k}}
+                \underbrace{ - \div \left( \vectil{u} \cdot \mathbf{\tau} \right) }_{\equiv C_{k}}
+                \underbrace{ + \mathbf{\tau} : \vectil{S} }_{\equiv P_{k}}
     \end{empheq}
     \label{eq:k-transport}
 \end{subequations}
@@ -96,22 +96,22 @@ where we can define the following budget terms as
 
 \begin{subequations}
     \begin{align}
-        A \equiv \; &
+        A_{k} \equiv \; &
             - \frac{1}{\rho} \pdv{}{x_{j}} \left(\widetilde{p} \widetilde{u}_{j} \right) \\
-        B \equiv \; &
+        B_{k} \equiv \; &
             2 \nu \pdv{}{x_{j}} \left( \widetilde{u}_{i} \widetilde{S}_{ij} \right)\\
-        D \equiv \; &
+        D_{k} \equiv \; &
             - 2 \nu \widetilde{S}_{ij} \widetilde{S}_{ij} \\
-        C \equiv \; &
+        C_{k} \equiv \; &
             - \pdv{}{x_{j}} \left( \widetilde{u}_{i} \tau_{ij} \right)\\
-        P \equiv \; &
+        P_{k} \equiv \; &
             \tau_{ij} \widetilde{S}_{ij}
     \end{align}
 \end{subequations}
 
 On the right hand side in Eq.~\ref{eq:k-transport}:
 \begin{enumerate}
-    \item Note that terms $A$, $B$, and $C$ are in the ``flux form''
+    \item Note that terms $A_{k}$, $B_{k}$, and $C_{k}$ are in the ``flux form''
         $\partial(\;)_{j}/\partial x_{j} \equiv \div (\;)$, meaning they
         appear as the divergence of the quantity in parentheses, and thus
         they cannot correspond to net addition or removal of kinetic
@@ -120,7 +120,7 @@ On the right hand side in Eq.~\ref{eq:k-transport}:
         that they produce at one location must be offset by a corresponding
         decrease in $k$ at another point.
 
-    \item Specifically, $A$ and $B$ account for redistribution of kinetic
+    \item Specifically, $A_{k}$ and $B_{k}$ account for redistribution of kinetic
         energy within the resolved scales by the resolved-scale fluid
         stress tensor 
         
@@ -131,36 +131,36 @@ On the right hand side in Eq.~\ref{eq:k-transport}:
 
         where the first term on the right in Eq.~\ref{eq:k-stresses} are the
         normal stresses due to the resolved pressure that redistribute
-        kinetic energy via term $A$ in Eq.~\ref{eq:k-transport}, and the
+        kinetic energy via term $A_{k}$ in Eq.~\ref{eq:k-transport}, and the
         second term on the right in Eq.~\ref{eq:k-stresses} are the 
         resolved-scale viscous stresses that redistribute kinetic energy
-        via term $B$ in Eq.~\ref{eq:k-transport}.
+        via term $B_{k}$ in Eq.~\ref{eq:k-transport}.
 
-    \item Term $C$ accounts for the redistribution of kinetic energy within
+    \item Term $C_{k}$ accounts for the redistribution of kinetic energy within
         the resolved scales by the subgrid stress tensor $\tau_{ij}$; it is
-        analogous to term $B$ but accounts for redistribution by the 
+        analogous to term $B_{k}$ but accounts for redistribution by the 
         subgrid stresses rather then by the viscous stresses.
 
-    \item Term $D$ accounts for resolved-scale viscous dissipation of
-        kinetic energy. Since $(S_{ij}$ $S_{ij})$ is a square term, $D$ is
+    \item Term $D_{k}$ accounts for resolved-scale viscous dissipation of
+        kinetic energy. Since $(S_{ij}$ $S_{ij})$ is a square term, $D_{k}$ is
         always non-positive, thus everywhere in the flow it always acts to
         remove kinetic energy from the resolved scales.
 
-    \item Term $P$ accounts for subgrid production of kinetic energy,
+    \item Term $P_{k}$ accounts for subgrid production of kinetic energy,
         namely kinetic energy exchange between the resolved and subgrid
         scales due to the subgrid stress tensor $\tau_{ij}$. This can be
-        locally positive or negative; wherever $P<0$ there is kinetic
+        locally positive or negative; wherever $P_{k}<0$ there is kinetic
         energy transfer from the resolved scales into the subgrid scales
-        (``forward scatter'' of energy), and wherever $P>0$ there is
+        (``forward scatter'' of energy), and wherever $P_{k}>0$ there is
         kinetic energy transfer from the subgrid scales into the resolved
         scales (``back scatter'' of energy). The subgrid production field
-        $P(\mathbf{x}, t)$ consist of widely varying positive and negative
+        $P_{k}(\mathbf{x}, t)$ consist of widely varying positive and negative
         values, but the average subgrid production is negative, namely
-        $\langle P(\mathbf{x}, t) \rangle \equiv \varepsilon < 0$, so on
+        $\langle P_{k}(\mathbf{x}, t) \rangle \equiv \varepsilon < 0$, so on
         average the subgrid production removes kinetic energy from the
-        resolved scales. However, local magnitudes of $P(\mathbf{x}, t)$
+        resolved scales. However, local magnitudes of $P_{k}(\mathbf{x}, t)$
         due to forward and backward scatted can be many orders of magnitude
-        larger tham $\varepsilon$.
+        larger than $\varepsilon$.
         
 \end{enumerate}
 
@@ -168,7 +168,7 @@ On the right hand side in Eq.~\ref{eq:k-transport}:
 From the ``board notes'' the kinetic energy production term in the kinetic
 energy transport equation can be defined as
 \begin{equation}
-    P =  - \sgsvec:\svec
+    P_{k} =  - \sgsvec:\svec
 \end{equation}
 Additionally, applying the following  formulation of the subgrid stress
 (SGS) 
